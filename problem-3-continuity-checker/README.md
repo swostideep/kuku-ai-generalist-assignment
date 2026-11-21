@@ -37,9 +37,15 @@ Recall on planted errors. Names are detected from the show itself.
 ```bash
 python3 -m unittest discover -s tests -v
 ```
-Runs 15 tests on synthetic scripts.
+Runs 19 tests on synthetic scripts.
 
-Optional model review (any OpenAI-compatible endpoint):
+**Web app.** Run the command below, then open http://localhost:8703. Run the checks, filter by severity, check or episode, open a finding to see its evidence and the surrounding lines, and export the CSV.
+
+```bash
+python3 web.py --shows "path/to/folder_of_shows"
+```
+
+Optional model review (CLI only; any OpenAI-compatible endpoint):
 
 ```bash
 LLM_API_KEY=... python3 run.py --show <folder> --llm-base-url http://localhost:11434/v1 --llm-model llama3.1

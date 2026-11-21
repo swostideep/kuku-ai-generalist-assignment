@@ -83,4 +83,4 @@ This is the brief's central risk, so the design starts from it.
 - `nyaya/`: the knowledge base, intake (fact extraction), advisor (the reply), guard (anti-hallucination), and the model client.
 - `cases/`: 16 test conversations.
 - `tests/`: unit and red-team tests.
-- `web/index.html`: the browser UI.
+- `web/`: the browser UI (`index.html`, `app.js`, `app.css`, plus the shared Material 3 `m3.css` / `ui.js`; see ../DESIGN_SYSTEM.md).

@@ -1,0 +1,74 @@
+EPISODE NUMBER: Episode 2
+EPISODE LOGLINE: Mara lights the cracked lamp and sees the night her mother vanished.
+CONTINUITY NOTES: Picks up directly from Episode 1.
+
+--- SCRIPT START ---
+
+SCENE 01
+Scene heading: INT. HARROWGATE ATTIC - NIGHT
+Scene start: 00:00.00
+Scene end: 00:43.50
+
+Actions and dialogue:
+
+**CAMERA:**
+Start: (00:00.00) | End: (00:03.00)
+Mara kneels by a cracked brass lamp.
+
+**MARA (Quiet):**
+Start: (00:00.00) | End: (00:02.50)
+"One match. That is all."
+
+**SOUND FX:**
+Start: (00:03.00) | End: (00:05.00)
+The wick catches with a hiss.
+
+**MARA (Horrified):**
+Start: (00:05.50) | End: (00:08.00)
+"Mother? Mother, it's me!"
+
+**ELENA (Afraid, Pleading):**
+Start: (00:08.50) | End: (00:11.50)
+"Mara, run! Don't let Corwin find the key!"
+
+**MARA (Desperate):**
+Start: (00:12.00) | End: (00:14.50)
+"What key? Where are you?"
+
+**TALL STRANGER (Cold):**
+Start: (00:15.00) | End: (00:18.00)
+"She can't hear you. She never could."
+
+**MARA (Furious):**
+Start: (00:18.50) | End: (00:21.50)
+"You took her! You took her from Harrowgate!"
+
+**TALL STRANGER (Sinister):**
+Start: (00:22.00) | End: (00:25.00)
+"I kept her safe. Your uncle wanted her drowned."
+
+**MARA (Shocked):**
+Start: (00:25.50) | End: (00:27.50)
+"My uncle is dead."
+
+**TALL STRANGER (Chilling):**
+Start: (00:28.00) | End: (00:31.50)
+"Then who signed your letter of invitation?"
+
+**SOUND FX:**
+Start: (00:32.00) | End: (00:34.00)
+The lamp goes dark.
+
+**MARA (Shaken):**
+Start: (00:34.50) | End: (00:37.00)
+"I need some air."
+
+**HOUSEKEEPER BRAND (Gentle):**
+Start: (00:37.50) | End: (00:40.00)
+"The garden is quiet at night."
+
+**MARA (Soft):**
+Start: (00:40.50) | End: (00:42.50)
+"Thank you."
+
+--- SCRIPT END ---

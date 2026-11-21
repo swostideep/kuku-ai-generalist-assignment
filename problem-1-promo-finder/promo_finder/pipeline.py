@@ -19,7 +19,8 @@ ENGINE_VERSION = "2.1"
 def run(show: Path, output: Path, per_episode: int = 2, first_wave: int = 10, max_overlap: float = 0.3,
         pool_size: int = 12, settings: Optional[Settings] = None,
         model_complete: Optional[Callable[[str, str], str]] = None, model_name: str = "",
-        model_finalists: int = 6, log: Callable[[str], None] = print, premise_slots: int = 2) -> Dict[str, Any]:
+        model_finalists: int = 6, log: Callable[[str], None] = print, premise_slots: int = 2,
+        progress: Optional[Callable[[int, int], None]] = None) -> Dict[str, Any]:
     t0 = time.time()
     cfg = settings or Settings()
     episodes = load_show(show)
@@ -36,7 +37,9 @@ def run(show: Path, output: Path, per_episode: int = 2, first_wave: int = 10, ma
     by_number = {e.number: e for e in episodes}
 
     generated = []
-    for ep in episodes:
+    for i, ep in enumerate(episodes, 1):
+        if progress:
+            progress(i, len(episodes))  # optional hook for the web UI; no effect on results
         cands, stats = generate_candidates(ep, ctx, cfg)
         totals.update(stats)
         generated.append((ep, cands, stats))

@@ -8,7 +8,7 @@
 cd problem-1-promo-finder
 ```
 
-Run the tests (48, synthetic data, about 20 s):
+Run the tests (52, synthetic data, about 20 s):
 
 ```bash
 python3 -m unittest discover -s tests -v
@@ -20,7 +20,13 @@ Run on a show folder of episode `.txt` files (or a single episode file). It writ
 python3 run.py --show "path/to/show_folder"
 ```
 
-Optional LLM review. Any OpenAI-compatible endpoint works, for example Ollama:
+Or use the web app, then open http://localhost:8701. `--shows` takes one show folder or a folder of show folders; results go to `outputs/web/<show>/`:
+
+```bash
+python3 web.py --shows "path/to/folder_of_shows"
+```
+
+Optional LLM review (CLI only). Any OpenAI-compatible endpoint works, for example Ollama:
 
 ```bash
 python3 run.py --show "path/to/show_folder" --llm-base-url http://localhost:11434/v1 --llm-model llama3.1
@@ -70,7 +76,7 @@ python3 app.py cases --output outputs/transcripts
 cd problem-3-continuity-checker
 ```
 
-Run the tests (15):
+Run the tests (19):
 
 ```bash
 python3 -m unittest discover -s tests -v
@@ -82,8 +88,24 @@ Run the checker. It writes `outputs/report.html` and more, and exits with 1 if e
 python3 run.py --show "path/to/show_folder"
 ```
 
+Or use the web app, then open http://localhost:8703:
+
+```bash
+python3 web.py --shows "path/to/folder_of_shows"
+```
+
 Recall on planted errors:
 
 ```bash
 python3 evaluate_seeded.py --show "path/to/show_folder" --seed 7
 ```
+
+## Demo show (no Kuku pack needed)
+
+From the repository root, write an invented 8-episode show with planted continuity errors to `samples/The Lantern House/`:
+
+```bash
+python3 samples/make_demo_show.py
+```
+
+Then run either screenplay app on it, for example `cd problem-3-continuity-checker && python3 web.py --shows ../samples`.

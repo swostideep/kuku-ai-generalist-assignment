@@ -1,0 +1,66 @@
+EPISODE NUMBER: Episode 4
+EPISODE LOGLINE: Mara searches the lamp room for the key and finds her father's diary.
+CONTINUITY NOTES: Follows Episode 3.
+
+--- SCRIPT START ---
+
+SCENE 01
+Scene heading: INT. HARROGATE LAMP ROOM - NIGHT
+Scene start: 00:00.00
+Scene end: 00:38.50
+
+Actions and dialogue:
+
+**CAMERA:**
+Start: (00:00.00) | End: (00:03.00)
+Shelves of lamps, each with a paper label.
+
+**MARA (Whisper):**
+Start: (00:00.00) | End: (00:02.50)
+"Elena. Corwin. Mara. Father labelled us."
+
+**HOUSEKEEPER BRAND (Nervous):**
+Start: (00:03.00) | End: (00:05.50)
+"You shouldn't be in here, miss."
+
+**MARA (Urgent):**
+Start: (00:06.00) | End: (00:09.00)
+"Then tell me where the key is, Brand."
+
+**HOUSEKEEPER BRAND (Afraid):**
+Start: (00:09.50) | End: (00:12.50)
+"In the diary. But Harrogate keeps what it is given."
+
+**ACTION:**
+Start: (00:13.00) | End: (00:15.00)
+Mara pulls a diary from behind the Mara lamp.
+
+**MARA (Reading, Shocked):**
+Start: (00:15.50) | End: (00:18.50)
+"My mother isn't missing. She is inside the lamp."
+
+**TALL STRANGER (Urgent):**
+Start: (00:19.00) | End: (00:22.00)
+"And Corwin has the only flame that frees her."
+
+**MARA (Desperate):**
+Start: (00:22.50) | End: (00:25.00)
+"Then I'll take it from him."
+
+**TALL STRANGER (Grim):**
+Start: (00:25.50) | End: (00:29.50)
+"If you fail, you take her place in the glass."
+
+**SOUND FX:**
+Start: (00:30.00) | End: (00:32.00)
+Footsteps on the stairs.
+
+**HOUSEKEEPER BRAND (Quiet):**
+Start: (00:32.50) | End: (00:35.00)
+"Go to bed, miss. Quickly."
+
+**MARA (Soft):**
+Start: (00:35.50) | End: (00:37.50)
+"Good night, Brand."
+
+--- SCRIPT END ---

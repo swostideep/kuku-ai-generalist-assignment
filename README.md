@@ -4,16 +4,16 @@ Three independent prototypes for Kuku's AI Generalist assignment. Each is a stan
 
 | Folder | Problem | What it does | Tests |
 |---|---|---|---|
-| [`problem-1-promo-finder/`](problem-1-promo-finder/) | 1: Find the Promos | Finds and ranks 20–60 s promo clips in timestamped microdrama screenplays, with cut points that never fall inside a spoken line, hard quality gates, and an optional swappable LLM reviewer | 48 |
-| [`problem-2-nyaya-sahayak/`](problem-2-nyaya-sahayak/) | 2: AI Lawyer | A text/voice assistant for three everyday money disputes in India (refund, rent deposit, unpaid salary). It cites only a closed, sourced knowledge base, and a guard rejects invented law | 18 (28 scripted conversations) |
-| [`problem-3-continuity-checker/`](problem-3-continuity-checker/) | 3: Own problem | QA for AI-generated scripts: name drift, speaker-label aliases, unnamed recurring characters, unspeakable line timing, timing overlaps, wrong episode references | 15 + seeded-error evaluation |
+| [`problem-1-promo-finder/`](problem-1-promo-finder/) | 1: Find the Promos | Finds and ranks 20–60 s promo clips in timestamped microdrama screenplays, with cut points that never fall inside a spoken line, hard quality gates, and an optional swappable LLM reviewer. Web app + CLI | 52 |
+| [`problem-2-nyaya-sahayak/`](problem-2-nyaya-sahayak/) | 2: AI Lawyer | A text/voice assistant for three everyday money disputes in India (refund, rent deposit, unpaid salary). It cites only a closed, sourced knowledge base, and a guard rejects invented law. Web app + CLI | 18 (28 scripted conversations) |
+| [`problem-3-continuity-checker/`](problem-3-continuity-checker/) | 3: Own problem | QA for AI-generated scripts: name drift, speaker-label aliases, unnamed recurring characters, unspeakable line timing, timing overlaps, wrong episode references. Web app + CLI | 19 + seeded-error evaluation |
 
 The assignment asks for **one** submission; this repository holds all three as a portfolio. See [`submission/PROJECT_OVERVIEW.md`](submission/PROJECT_OVERVIEW.md) for which one is submitted and why.
 
 ## Quick start
 
 ```bash
-git clone https://github.com/<owner>/kuku-ai-generalist-assignment.git
+git clone https://github.com/swostideep/kuku-ai-generalist-assignment.git
 cd kuku-ai-generalist-assignment
 ```
 
@@ -36,6 +36,18 @@ Problem 3:
 ```bash
 cd problem-3-continuity-checker && python3 run.py --show "path/to/show_folder" && python3 -m unittest discover -s tests
 ```
+
+### Web apps
+
+All three apps share one Material Design 3 interface ([`DESIGN_SYSTEM.md`](DESIGN_SYSTEM.md); before/after in [`FRONTEND_REDESIGN_REPORT.md`](FRONTEND_REDESIGN_REPORT.md)).
+
+| App | Command (from its folder) | URL |
+|---|---|---|
+| Promo Finder | `python3 web.py --shows "path/to/folder_of_shows"` | http://localhost:8701 |
+| Nyaya Sahayak | `python3 app.py web` | http://localhost:8765 |
+| Continuity Checker | `python3 web.py --shows "path/to/folder_of_shows"` | http://localhost:8703 |
+
+No Kuku pack? `python3 samples/make_demo_show.py` writes an invented 8-episode show to `samples/`; then pass `--shows ../samples`.
 
 Full steps are in [`submission/RUN_INSTRUCTIONS.md`](submission/RUN_INSTRUCTIONS.md).
 

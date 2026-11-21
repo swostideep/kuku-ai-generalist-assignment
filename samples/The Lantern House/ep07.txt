@@ -1,0 +1,62 @@
+EPISODE NUMBER: Episode 7
+EPISODE LOGLINE: Corwin bargains for the house, and Mara learns the price.
+CONTINUITY NOTES: Picks up directly from Episode 6.
+
+--- SCRIPT START ---
+
+SCENE 01
+Scene heading: INT. HARROWGATE LAMP ROOM - NIGHT
+Scene start: 00:00.00
+Scene end: 00:34.50
+
+Actions and dialogue:
+
+**CAMERA:**
+Start: (00:00.00) | End: (00:03.00)
+Corwin stands in the doorway with a lantern.
+
+**CORWIN (Smooth):**
+Start: (00:00.00) | End: (00:02.50)
+"A family reunion. How touching."
+
+**MARA (Defiant):**
+Start: (00:03.00) | End: (00:05.50)
+"It's over, Corwin."
+
+**CORWIN (Cold):**
+Start: (00:06.00) | End: (00:09.00)
+"Harrowgate needs a keeper. It always takes one."
+
+**ELENA (Afraid):**
+Start: (00:09.50) | End: (00:12.00)
+"Don't listen to him, Mara."
+
+**CORWIN (Menacing):**
+Start: (00:12.50) | End: (00:15.50)
+"Give me the ring, or the house takes your mother back."
+
+**MARA (Desperate):**
+Start: (00:16.00) | End: (00:18.50)
+"Take me instead!"
+
+**TALL STRANGER (Urgent):**
+Start: (00:19.00) | End: (00:21.50)
+"No! That's what he wants!"
+
+**CORWIN (Triumphant):**
+Start: (00:22.00) | End: (00:25.50)
+"Then it's agreed. At dawn, the house chooses."
+
+**SOUND FX:**
+Start: (00:26.00) | End: (00:28.00)
+Every clock in the house stops.
+
+**MARA (Quiet):**
+Start: (00:28.50) | End: (00:31.00)
+"Then we have until dawn."
+
+**ELENA (Gentle):**
+Start: (00:31.50) | End: (00:33.50)
+"Rest, my love."
+
+--- SCRIPT END ---

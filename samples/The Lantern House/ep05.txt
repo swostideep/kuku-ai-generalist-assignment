@@ -1,0 +1,66 @@
+EPISODE NUMBER: Episode 5
+EPISODE LOGLINE: At the lantern feast, Mara tries to steal Corwin's flame.
+CONTINUITY NOTES: Picks up from Episode 4.
+
+--- SCRIPT START ---
+
+SCENE 01
+Scene heading: INT. HARROWGATE BALLROOM - NIGHT
+Scene start: 00:00.00
+Scene end: 00:34.20
+
+Actions and dialogue:
+
+**CAMERA:**
+Start: (00:00.00) | End: (00:03.00)
+A ballroom lit by a hundred lanterns.
+
+**LADY MARA (Nervous):**
+Start: (00:00.00) | End: (00:02.50)
+"Smile, and keep him talking."
+
+**HOUSEKEEPER BRAND (Whisper):**
+Start: (00:03.00) | End: (00:05.00)
+"The flame is in his ring."
+
+**CORWIN (Charming):**
+Start: (00:05.50) | End: (00:08.00)
+"Dance with me, niece."
+
+**LADY MARA (Polite):**
+Start: (00:08.50) | End: (00:10.50)
+"One dance."
+
+**ACTION:**
+Start: (00:11.00) | End: (00:13.00)
+Mara slips the ring from Corwin's finger.
+
+**CORWIN (Furious):**
+Start: (00:13.50) | End: (00:16.00)
+"Thief! Seize her!"
+
+**LADY MARA (Defiant):**
+Start: (00:16.50) | End: (00:19.50)
+"You trapped my mother in glass for nine years!"
+
+**CORWIN (Cold, Menacing):**
+Start: (00:20.00) | End: (00:23.50)
+"And tonight I will trap her daughter beside her."
+
+**TALL STRANGER (Urgent):**
+Start: (00:24.00) | End: (00:25.20)
+"Mara run now to the lamp room before he reaches the stairs and locks every door behind you"
+
+**SOUND FX:**
+Start: (00:25.70) | End: (00:27.70)
+Every lantern in the ballroom goes out.
+
+**LADY MARA (Calm):**
+Start: (00:28.20) | End: (00:30.70)
+"I can find my way."
+
+**HOUSEKEEPER BRAND (Warm):**
+Start: (00:31.20) | End: (00:33.20)
+"This way, miss."
+
+--- SCRIPT END ---

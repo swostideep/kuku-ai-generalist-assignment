@@ -1,82 +1,85 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nyaya Sahayak</title>
-<style>
-:root{--bg:#f7f6f2;--fg:#1c2230;--muted:#5d6675;--card:#fff;--line:#e2e0d8;--accent:#0f6e7a;--warn:#9a3b1b;--warnbg:#fdeee8}
-@media (prefers-color-scheme: dark){:root{--bg:#14171c;--fg:#e8eaee;--muted:#9aa3b2;--card:#1c2027;--line:#2c313a;--accent:#5cc3cf;--warn:#ffb59b;--warnbg:#3a2018}}
-*{box-sizing:border-box} body{margin:0 auto;max-width:860px;padding:16px;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,sans-serif}
-h1{font-size:22px;margin:4px 0} .sub{color:var(--muted);margin:0 0 12px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:10px 0}
-textarea{width:100%;min-height:96px;font:inherit;padding:10px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--fg)}
-.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;align-items:center}
-button,select{font:inherit;padding:8px 14px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
-button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
-h3{margin:12px 0 4px;font-size:15px;color:var(--accent)} ul,ol{margin:4px 0 4px 20px;padding:0}
-.safety{background:var(--warnbg);color:var(--warn);border-color:var(--warn);font-weight:600}
-pre{white-space:pre-wrap;background:var(--bg);padding:10px;border-radius:8px;border:1px solid var(--line);font-size:13px}
-.you{color:var(--muted);font-style:italic} small{color:var(--muted)}
-</style></head><body>
-<h1>Nyaya Sahayak</h1>
-<p class="sub">Free help with three everyday money problems in India: <b>refunds</b>, <b>rent deposits</b> and <b>unpaid salary</b>.
-Legal information from sourced references, not legal advice.</p>
-<div class="card">
-  <textarea id="msg" placeholder="Tell me what happened, when, how much money, and what proof you have. English, Hindi or Hinglish is fine."></textarea>
-  <div class="row">
-    <button class="primary" id="send">Send</button>
-    <button id="mic" title="Voice input (Chrome)">🎤 Speak</button>
-    <select id="lang"><option value="en-IN">English</option><option value="hi-IN">हिन्दी</option></select>
-    <button id="reset">New case</button>
-    <small id="status"></small>
-  </div>
-  <small>Voice uses your browser's speech recognition (in Chrome this sends audio to Google). Type instead for privacy.</small>
+<link rel="stylesheet" href="/m3.css">
+<link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<a class="sr-only" href="#composer">Skip to message box</a>
+<div class="app no-sidebar">
+  <header class="topbar" role="banner">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true" id="brandIcon"></div>
+      <div>
+        <div class="brand-name">Nyaya Sahayak</div>
+        <div class="brand-sub">Legal information for everyday money problems in India</div>
+      </div>
+    </div>
+    <div class="spacer"></div>
+    <button class="btn tonal case-toggle" id="openCase" hidden aria-controls="casePanel"><span class="long">View case details</span><span class="short">Case</span></button>
+    <button class="btn text" id="newCase"><span class="long">Start a new case</span><span class="short">New case</span></button>
+  </header>
+
+  <main class="chat-layout" id="main">
+    <section class="conversation" aria-label="Conversation">
+      <div class="thread" id="thread" aria-live="polite">
+        <div class="welcome" id="welcome">
+          <h1 class="headline">What happened?</h1>
+          <p class="body-lg muted">Describe your problem in your own words. I'll organise the facts, explain your options with sources, and draft a legal notice you can send.</p>
+          <p class="title-sm topics-title">I can help with</p>
+          <div class="topics" role="list">
+            <button class="topic" role="listitem" data-start="I paid Rs [amount] to [company] on [date] for [product or service]. It was [defective / not delivered], and they have not refunded me.">
+              <span class="topic-title">Refund not received</span><span class="body-sm muted">Defective product, cancelled order, service not provided</span>
+            </button>
+            <button class="topic" role="listitem" data-start="My landlord in [city] has not returned my security deposit of Rs [amount]. I moved out on [date].">
+              <span class="topic-title">Deposit not returned</span><span class="body-sm muted">Landlord keeping your security deposit after you moved out</span>
+            </button>
+            <button class="topic" role="listitem" data-start="My employer [company name] in [city] has not paid my salary of Rs [amount] per month for [number] months.">
+              <span class="topic-title">Salary not paid</span><span class="body-sm muted">Unpaid wages, or final dues after resigning</span>
+            </button>
+          </div>
+          <div class="banner info welcome-note" id="disclaimerTop"></div>
+        </div>
+      </div>
+
+      <form class="composer" id="composer" autocomplete="off">
+        <label class="sr-only" for="msg">Describe your problem</label>
+        <textarea id="msg" class="textarea" rows="2" placeholder="Describe what happened: when, how much money, and what proof you have. English, Hindi or Hinglish."></textarea>
+        <div class="composer-bar">
+          <label class="sr-only" for="lang">Voice input language</label>
+          <select id="lang" class="select compact"><option value="en-IN">English</option><option value="hi-IN">हिन्दी</option></select>
+          <button type="button" class="icon-btn" id="mic" aria-label="Speak instead of typing" data-tip="Speak (uses your browser's speech recognition)"></button>
+          <span class="grow body-sm muted" id="composerStatus" role="status"></span>
+          <button type="submit" class="btn filled" id="send"><span>Send</span></button>
+        </div>
+      </form>
+    </section>
+
+    <div class="scrim" id="caseScrim"></div>
+    <aside class="case-panel" id="casePanel" aria-label="Your case" aria-hidden="false">
+      <div class="panel-head">
+        <h2 class="title-md">Your case</h2>
+        <button class="icon-btn panel-close" id="closeCase" aria-label="Close case details"></button>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Case sections">
+        <button class="tab" role="tab" id="tab-case" aria-controls="pane-case" aria-selected="true">Facts</button>
+        <button class="tab" role="tab" id="tab-steps" aria-controls="pane-steps" aria-selected="false" tabindex="-1">Next steps</button>
+        <button class="tab" role="tab" id="tab-sources" aria-controls="pane-sources" aria-selected="false" tabindex="-1">Sources</button>
+        <button class="tab" role="tab" id="tab-notice" aria-controls="pane-notice" aria-selected="false" tabindex="-1">Notice</button>
+      </div>
+      <div class="panel-body">
+        <div role="tabpanel" id="pane-case" aria-labelledby="tab-case"></div>
+        <div role="tabpanel" id="pane-steps" aria-labelledby="tab-steps" hidden></div>
+        <div role="tabpanel" id="pane-sources" aria-labelledby="tab-sources" hidden></div>
+        <div role="tabpanel" id="pane-notice" aria-labelledby="tab-notice" hidden></div>
+      </div>
+    </aside>
+  </main>
 </div>
-<div id="log"></div>
-<script>
-let session = null;
-const $ = (id) => document.getElementById(id);
-const esc = (s) => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const list = (xs, ordered) => xs && xs.length ? `<${ordered?"ol":"ul"}>${xs.map(x=>`<li>${esc(x)}</li>`).join("")}</${ordered?"ol":"ul"}>` : "";
-function show(text, r){
-  let h = `<div class="card"><div class="you">You: ${esc(text)}</div>`;
-  if (r.safety) h += `<div class="card safety">${r.safety.map(esc).join("<br>")}</div>`;
-  if (r.type !== "advice") h += `<p>${esc(r.message)}</p>`;
-  else {
-    const s = r.case_summary;
-    h += `<h3>Your case</h3><ul><li>Problem: ${esc(s.problem)}</li><li>Amount: ${esc(s.amount_claimed)}</li><li>When: ${esc(s.when)}</li>
-      <li>Where: ${esc(s.where)}</li><li>Against: ${esc(s.against)}</li><li>Proof you have: ${esc(s.proof_you_mentioned.join(", "))}</li>
-      <li>Proof that would help: ${esc(s.proof_that_would_help.join(", "))}</li></ul>`;
-    if (r.questions.length) h += `<h3>I need to know</h3>${list(r.questions)}`;
-    if (r.plain_explanation) h += `<h3>In simple words</h3><p>${esc(r.plain_explanation)}</p>`;
-    h += `<h3>Where you stand</h3>${list(r.where_you_stand)}<h3>What you can do</h3>${list(r.options, true)}`;
-    if (r.see_a_lawyer_if.length) h += `<h3>Get a lawyer or free legal aid because</h3>${list(r.see_a_lawyer_if)}`;
-    if (r.also_noted) h += list(r.also_noted);
-    if (r.hindi_summary) h += `<p>${esc(r.hindi_summary)}</p>`;
-    h += `<details><summary>Draft legal notice</summary><pre>${esc(r.draft_notice)}</pre></details>`;
-  }
-  if (r.sources && r.sources.length) h += `<details><summary>Sources (${r.sources.length})</summary><ul>${r.sources.map(x=>
-     `<li>[${esc(x.id)}] ${esc(x.law)}, ${esc(x.ref)} <small>(${esc(x.verification)})</small> <a href="${esc(x.url)}" target="_blank" rel="noopener">link</a></li>`).join("")}</ul></details>`;
-  h += `<p><small>${esc(r.disclaimer)}</small></p></div>`;
-  $("log").insertAdjacentHTML("afterbegin", h);
-}
-async function send(){
-  const text = $("msg").value.trim(); if (!text) return;
-  $("status").textContent = "Thinking…";
-  try {
-    const res = await fetch("/api/turn", {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify({session, text})});
-    const r = await res.json(); session = r.session; show(text, r); $("msg").value = ""; $("status").textContent = "";
-  } catch(e){ $("status").textContent = "Could not reach the server."; }
-}
-$("send").onclick = send;
-$("reset").onclick = () => { session = null; $("log").innerHTML = ""; };
-$("msg").addEventListener("keydown", e => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) send(); });
-const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-if (!SR) { $("mic").disabled = true; $("mic").title = "Voice input needs Chrome or Edge"; }
-$("mic").onclick = () => {
-  const rec = new SR(); rec.lang = $("lang").value; rec.interimResults = false;
-  $("status").textContent = "Listening…";
-  rec.onresult = e => { $("msg").value += (($("msg").value ? " " : "") + e.results[0][0].transcript); };
-  rec.onend = () => { $("status").textContent = ""; };
-  rec.onerror = () => { $("status").textContent = "Voice input failed; please type."; };
-  rec.start();
-};
-</script></body></html>
+<script src="/ui.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

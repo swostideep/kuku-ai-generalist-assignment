@@ -4,9 +4,11 @@
 
 | Project | Tests (fresh run) | Full-pack result (Kuku's confidential pack, run locally) |
 |---|---|---|
-| Problem 1: Promo Finder | 48/48 pass | 83 ranked promos from 14,615 legal windows (1,146 pass the gates); 4 episodes without a promo; byte-identical across separate processes; 0% mid-line cuts, 0 overlapping same-episode pairs. On the pack with acting directions removed: 75 promos / 6 empty episodes (v2.0 gave 41 / 23) |
+| Problem 1: Promo Finder | 52/52 pass (incl. 4 web API) | 83 ranked promos from 14,615 legal windows (1,146 pass the gates); 4 episodes without a promo; byte-identical across separate processes; 0% mid-line cuts, 0 overlapping same-episode pairs. On the pack with acting directions removed: 75 promos / 6 empty episodes (v2.0 gave 41 / 23) |
 | Problem 2: Nyaya Sahayak | 18/18 pass, including all 28 scripted conversations | Transcripts in `problem-2-nyaya-sahayak/outputs/transcripts/` (invented test cases). The web app was tested live: one rent-deposit message gave the correct amount, state, evidence, citations and draft notice |
-| Problem 3: Continuity Checker | 15/15 pass | 40 findings (15 errors, 25 warnings) in about 0.15 s; planted-error evaluation 100/100 on seeds 7 and 11 (circular, as disclosed); real recall 7 of 10 confirmed spelling variants |
+| Problem 3: Continuity Checker | 19/19 pass (incl. 4 web API) | 40 findings (15 errors, 25 warnings) in about 0.15 s; planted-error evaluation 100/100 on seeds 7 and 11 (circular, as disclosed); real recall 7 of 10 confirmed spelling variants |
+
+**Frontend (added after the main build):** all three apps now have a working Material 3 web interface on one shared design system. The engines and CLI outputs are unchanged. See [`../FRONTEND_REDESIGN_REPORT.md`](../FRONTEND_REDESIGN_REPORT.md) and [`../DESIGN_SYSTEM.md`](../DESIGN_SYSTEM.md).
 
 ## Fixed after the internal audit (v2.1)
 

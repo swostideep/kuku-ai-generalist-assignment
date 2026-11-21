@@ -1,0 +1,66 @@
+EPISODE NUMBER: Episode 8
+EPISODE LOGLINE: At dawn, the house chooses its keeper.
+CONTINUITY NOTES: Picks up from Episode 7.
+
+--- SCRIPT START ---
+
+SCENE 01
+Scene heading: EXT. HARROWGATE COURTYARD - DAWN
+Scene start: 00:00.00
+Scene end: 00:37.00
+
+Actions and dialogue:
+
+**CAMERA:**
+Start: (00:00.00) | End: (00:03.00)
+Grey light over a courtyard of lanterns.
+
+**MARA (Resolute):**
+Start: (00:00.00) | End: (00:02.50)
+"I'm ready."
+
+**CORWIN (Smug):**
+Start: (00:03.00) | End: (00:05.50)
+"Step into the circle, niece."
+
+**TALL STRANGER (Firm):**
+Start: (00:06.00) | End: (00:08.50)
+"No. I step in."
+
+**MARA (Horrified):**
+Start: (00:09.00) | End: (00:11.50)
+"Father, no!"
+
+**TALL STRANGER (Tender):**
+Start: (00:12.00) | End: (00:15.00)
+"I've kept this house for nine years. I can keep it longer."
+
+**CORWIN (Furious):**
+Start: (00:15.50) | End: (00:18.00)
+"That's not the bargain!"
+
+**ELENA (Cold):**
+Start: (00:18.50) | End: (00:21.50)
+"The house chooses, Corwin. And it's looking at you."
+
+**ACTION:**
+Start: (00:22.00) | End: (00:24.00)
+The lanterns turn towards Corwin.
+
+**CORWIN (Terrified):**
+Start: (00:24.50) | End: (00:28.00)
+"Mara, help me! I'm your blood!"
+
+**SOUND FX:**
+Start: (00:28.50) | End: (00:30.50)
+A single lantern lights by itself.
+
+**MARA (Calm):**
+Start: (00:31.00) | End: (00:33.50)
+"The sun is up."
+
+**ELENA (Warm):**
+Start: (00:34.00) | End: (00:36.00)
+"Let's go home."
+
+--- SCRIPT END ---

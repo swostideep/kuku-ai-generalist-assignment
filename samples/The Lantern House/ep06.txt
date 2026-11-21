@@ -1,0 +1,66 @@
+EPISODE NUMBER: Episode 6
+EPISODE LOGLINE: Mara frees her mother, and the Man in Grey reveals who he is.
+CONTINUITY NOTES: Follows Episode 4.
+
+--- SCRIPT START ---
+
+SCENE 01
+Scene heading: INT. HARROWGAIT LAMP ROOM - NIGHT
+Scene start: 00:00.00
+Scene end: 00:36.50
+
+Actions and dialogue:
+
+**CAMERA:**
+Start: (00:00.00) | End: (00:03.00)
+Mara holds the ring over the cracked lamp.
+
+**MARA (Breathless):**
+Start: (00:00.00) | End: (00:02.50)
+"Come back to me, Mother."
+
+**SOUND FX:**
+Start: (00:03.00) | End: (00:05.00)
+Glass splits from top to bottom.
+
+**ELENA (Weak):**
+Start: (00:05.50) | End: (00:08.00)
+"Mara? You've grown so tall."
+
+**MARA (Crying, Relieved):**
+Start: (00:08.50) | End: (00:11.00)
+"I've got you. I've got you."
+
+**ELENA (Afraid):**
+Start: (00:11.50) | End: (00:14.50)
+"Where is he? Where is the man in grey?"
+
+**TALL STRANGER (Quiet):**
+Start: (00:15.00) | End: (00:17.50)
+"Here, Elena. Where I always was."
+
+**ELENA (Shocked):**
+Start: (00:18.00) | End: (00:20.50)
+"Thomas? You died in the fire!"
+
+**MARA (Stunned):**
+Start: (00:21.00) | End: (00:23.50)
+"Father?"
+
+**TALL STRANGER (Grim):**
+Start: (00:24.00) | End: (00:27.50)
+"Corwin lit the fire at Harrowgait. And he is outside this door."
+
+**SOUND FX:**
+Start: (00:28.00) | End: (00:30.00)
+The door handle turns slowly.
+
+**ELENA (Calm):**
+Start: (00:30.50) | End: (00:33.00)
+"Sit with me a moment."
+
+**MARA (Soft):**
+Start: (00:33.50) | End: (00:35.50)
+"Always."
+
+--- SCRIPT END ---

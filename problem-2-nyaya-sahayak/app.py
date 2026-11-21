@@ -70,6 +70,8 @@ def run_cases(a) -> int:
 
 
 PAGE = (HERE / "web" / "index.html")
+STATIC = {"/m3.css": ("m3.css", "text/css"), "/ui.js": ("ui.js", "text/javascript"),
+          "/app.css": ("app.css", "text/css"), "/app.js": ("app.js", "text/javascript")}
 SESSIONS = {}
 
 
@@ -86,8 +88,11 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(data)
 
     def do_GET(self):  # noqa: N802
-        if self.path in ("/", "/index.html"):
+        path = self.path.split("?", 1)[0]
+        if path in ("/", "/index.html"):
             return self._send(200, PAGE.read_text(encoding="utf-8"), "text/html")
+        if path in STATIC:  # fixed allow-list: no path traversal possible
+            return self._send(200, (HERE / "web" / STATIC[path][0]).read_text(encoding="utf-8"), STATIC[path][1])
         self._send(404, json.dumps({"error": "not found"}))
 
     def do_POST(self):  # noqa: N802

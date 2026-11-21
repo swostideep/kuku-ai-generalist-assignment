@@ -1,0 +1,74 @@
+EPISODE NUMBER: Episode 3
+EPISODE LOGLINE: Uncle Corwin returns, alive, and claims Harrowgate as his own.
+CONTINUITY NOTES: Continues from Episode 2.
+
+--- SCRIPT START ---
+
+SCENE 01
+Scene heading: INT. HARROWGATE DINING ROOM - DAY
+Scene start: 00:00.00
+Scene end: 00:44.00
+
+Actions and dialogue:
+
+**CAMERA:**
+Start: (00:00.00) | End: (00:03.00)
+A long table set for two.
+
+**CORWIN (Charming):**
+Start: (00:00.00) | End: (00:02.50)
+"Sit, niece. You look pale."
+
+**MARA (Wary):**
+Start: (00:03.00) | End: (00:05.50)
+"They buried you nine years ago."
+
+**CORWIN (Amused):**
+Start: (00:06.00) | End: (00:08.50)
+"They buried a box, Mara."
+
+**MARA (Accusing):**
+Start: (00:09.00) | End: (00:12.00)
+"You wrote the letter. You brought me here!"
+
+**CORWIN (Cold):**
+Start: (00:12.50) | End: (00:15.50)
+"I brought you home. Sign the deed and you may leave."
+
+**MARA (Defiant):**
+Start: (00:16.00) | End: (00:18.50)
+"The deed to Harrowgate is mine."
+
+**CORWIN (Menacing):**
+Start: (00:19.00) | End: (00:22.00)
+"Not if your mother is found alive."
+
+**TALL STRANGER (Low):**
+Start: (00:22.50) | End: (00:25.00)
+"Don't sign it. He's lying."
+
+**CORWIN (Furious):**
+Start: (00:25.50) | End: (00:28.00)
+"Who let him in here?"
+
+**MARA (Shocked):**
+Start: (00:28.50) | End: (00:31.00)
+"You can see him too?"
+
+**CORWIN (Sinister):**
+Start: (00:31.50) | End: (00:35.00)
+"I see him every night. He's the man I buried."
+
+**SOUND FX:**
+Start: (00:35.50) | End: (00:37.50)
+A glass shatters on the floor.
+
+**MARA (Calm):**
+Start: (00:38.00) | End: (00:40.50)
+"I will think about the deed."
+
+**CORWIN (Warm):**
+Start: (00:41.00) | End: (00:43.00)
+"Take your time."
+
+--- SCRIPT END ---

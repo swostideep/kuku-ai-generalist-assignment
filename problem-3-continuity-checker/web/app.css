@@ -1,0 +1,36 @@
+/* Continuity Checker: app-specific layout on top of m3.css */
+.check-card { max-width: 640px; }
+.check-actions { margin-top: var(--s5); }
+.status-area:not(:empty) { margin-top: var(--s5); }
+.how { max-width: 640px; margin-top: var(--s6); }
+.page-header { display: flex; gap: var(--s4); align-items: flex-start; justify-content: space-between; flex-wrap: wrap; }
+.toolbar { display: flex; gap: var(--s3); align-items: center; flex-wrap: wrap; margin: var(--s6) 0 var(--s4); }
+.chips { display: flex; gap: var(--s2); flex-wrap: wrap; }
+.toolbar .search { min-width: 220px; }
+.type-select { width: auto; min-width: 200px; }
+.ep-select { width: auto; min-width: 140px; }
+.kicker { display: flex; gap: var(--s2); align-items: center; margin-bottom: var(--s1); }
+.result-count { margin-top: var(--s3); }
+.eps { font-variant-numeric: tabular-nums; color: var(--md-on-surface-variant); }
+.sheet-section { margin-top: var(--s6); }
+.sheet-section > .title-sm { margin-bottom: var(--s2); }
+.loc { border: 1px solid var(--md-outline-variant); border-radius: var(--r-md); padding: var(--s3) var(--s4); }
+.loc + .loc { margin-top: var(--s2); }
+.loc-head { display: flex; gap: var(--s2); align-items: center; flex-wrap: wrap; }
+.loc-head .grow { min-width: 0; }
+.loc-text { margin-top: var(--s1); font: 400 15px/22px var(--md-font); }
+.loc .transcript { margin-top: var(--s3); }
+.forms { width: 100%; border-collapse: collapse; font: 400 14px/20px var(--md-font); }
+.forms th, .forms td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--md-outline-variant); vertical-align: top; }
+.forms th { font-weight: 500; color: var(--md-on-surface-variant); }
+.forms td.n { font-variant-numeric: tabular-nums; }
+.fix { background: var(--md-secondary-container); color: var(--md-on-secondary-container); border-radius: var(--r-md); padding: var(--s3) var(--s4); }
+.skip:focus { position: fixed; left: 16px; top: 8px; width: auto; height: auto; clip: auto; z-index: 100; padding: 8px 16px; background: var(--md-primary); color: var(--md-on-primary); border-radius: var(--r-sm); }
+@media (max-width: 1100px) { .hide-md { display: none; } }
+@media (max-width: 760px) {
+  .toolbar .search { min-width: 100%; order: -1; }
+  .chips { width: 100%; }
+  .type-select, .ep-select { flex: 1; min-width: 0; }
+  .table td.hide-md { display: none; }
+  #exportBtn { width: 100%; }
+}

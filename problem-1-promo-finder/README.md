@@ -27,7 +27,13 @@ python3 run.py --show "path/to/show_folder"
 - `--show` also accepts a single episode `.txt` file. That is the "new input in the interview" case.
 - The full 50-episode pack takes about 45 to 50 s on an Apple M2 laptop and peaks at about 33 MB RAM (`outputs/logs/resource_usage.txt`).
 
-Optional model review uses any OpenAI-compatible endpoint, so changing the model is just a flag:
+**Web app.** Run the command below, then open http://localhost:8701. Choose a show, click "Analyse screenplay" (the same pipeline, with a progress bar), then search, filter and open each promo: hook, cliffhanger, timestamps, scores and screenplay lines. Results are written to `outputs/web/<show>/`.
+
+```bash
+python3 web.py --shows "path/to/folder_of_shows"
+```
+
+Optional model review (CLI only) uses any OpenAI-compatible endpoint, so changing the model is just a flag:
 
 ```bash
 # local, free: Ollama
@@ -43,7 +49,7 @@ To regenerate every raw output, re-run the tests and redo the v1-vs-v2 evaluatio
 ./reproduce.sh "<show folder>" "<v1 outputs/ranked_promos.json>"
 ```
 
-Run the tests on their own (48 tests, stdlib `unittest`, synthetic fixtures only):
+Run the tests on their own (52 tests, stdlib `unittest`, synthetic fixtures only):
 
 ```bash
 python3 -m unittest discover -s tests -v
@@ -115,6 +121,7 @@ episode .txt ──► parser.py ──► candidates.py ───────�
 
 ```
 run.py              CLI
+web.py              web app server (stdlib); UI in web/ (Material 3, see ../DESIGN_SYSTEM.md)
 evaluate.py         reference-free quality checks (v1 vs v2), recomputed from the screenplay
 reproduce.sh        regenerate outputs + logs
 promo_finder/       parser, signals, candidates, select, judge, report, pipeline

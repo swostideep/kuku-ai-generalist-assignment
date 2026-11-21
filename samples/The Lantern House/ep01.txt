@@ -1,0 +1,90 @@
+EPISODE NUMBER: Episode 1
+EPISODE LOGLINE: Mara arrives at Harrowgate to sell her late father's lamps and finds the house expecting her.
+CONTINUITY NOTES: none
+
+--- SCRIPT START ---
+
+SCENE 01
+Scene heading: INT. HARROWGATE HALL - NIGHT
+Scene start: 00:00.00
+Scene end: 00:51.50
+
+Actions and dialogue:
+
+**CAMERA:**
+Start: (00:00.00) | End: (00:03.00)
+Wide shot of a hall full of unlit lanterns.
+
+**MARA (Tired):**
+Start: (00:00.00) | End: (00:02.50)
+"I only came to sell the lamps."
+
+**HOUSEKEEPER BRAND (Polite):**
+Start: (00:03.00) | End: (00:05.50)
+"Of course, miss. Tea first."
+
+**MARA (Polite):**
+Start: (00:06.00) | End: (00:08.00)
+"Thank you."
+
+**CAMERA:**
+Start: (00:08.50) | End: (00:10.50)
+Close-up on a portrait with Mara's face.
+
+**MARA (Shocked, Afraid):**
+Start: (00:08.50) | End: (00:11.00)
+"Why is my face on your wall?"
+
+**HOUSEKEEPER BRAND (Cold):**
+Start: (00:11.50) | End: (00:14.00)
+"Because you were born in this house."
+
+**MARA (Desperate):**
+Start: (00:14.50) | End: (00:17.50)
+"My father said Harrowgate burned before I was born!"
+
+**ACTION:**
+Start: (00:18.00) | End: (00:20.00)
+Every lantern in the hall flickers on at once.
+
+**TALL STRANGER (Menacing):**
+Start: (00:20.50) | End: (00:23.50)
+"Your father lied, and he paid for it."
+
+**MARA (Defiant):**
+Start: (00:24.00) | End: (00:26.50)
+"Who are you? Show your face!"
+
+**TALL STRANGER (Sinister):**
+Start: (00:27.00) | End: (00:30.00)
+"Ask the lamp in your bag who I am."
+
+**MARA (Trembling):**
+Start: (00:30.50) | End: (00:33.00)
+"There is nothing in my bag."
+
+**SOUND FX:**
+Start: (00:33.50) | End: (00:35.50)
+Glass cracks inside Mara's satchel.
+
+**TALL STRANGER (Threatening):**
+Start: (00:36.00) | End: (00:39.50)
+"Light it before midnight, or the house will take you."
+
+**SOUND FX:**
+Start: (00:40.00) | End: (00:42.00)
+A clock begins to strike.
+
+**MARA (Calm):**
+Start: (00:42.50) | End: (00:45.00)
+"I will go to bed now."
+
+**HOUSEKEEPER BRAND (Warm):**
+Start: (00:45.50) | End: (00:48.00)
+"Your room is ready, miss."
+
+**MARA (Soft):**
+Start: (00:48.50) | End: (00:50.50)
+"Good night."
+
+--- SCRIPT END ---
