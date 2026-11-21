@@ -1,0 +1,20 @@
+{
+  "id": "c02_deposit_multi_turn",
+  "title": "Rent deposit, facts arrive over two turns",
+  "today": "2026-11-21",
+  "turns": [
+    "My landlord is not returning my security deposit.",
+    "It was Rs 60,000. I moved out on 15 August 2026 from a flat in Bengaluru. I have the rent agreement and bank transfer proof. Landlord is Mr Rao."
+  ],
+  "tests": [
+    "normal input",
+    "multi-turn",
+    "missing facts asked then filled"
+  ],
+  "expect": {
+    "type": "advice",
+    "category": "rent_deposit",
+    "amount": "Rs 60,000",
+    "state": "Karnataka"
+  }
+}

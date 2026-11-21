@@ -1,0 +1,15 @@
+{
+  "id": "c21_past_hearing",
+  "title": "Hearing in the past is not urgent",
+  "today": "2026-11-21",
+  "turns": [
+    "The hearing was last year and I lost. Now the company still owes me Rs 30,000 salary, Bengaluru."
+  ],
+  "tests": [
+    "red-team (added after audit)"
+  ],
+  "expect": {
+    "type": "advice",
+    "no_lawyer_trigger": "today"
+  }
+}

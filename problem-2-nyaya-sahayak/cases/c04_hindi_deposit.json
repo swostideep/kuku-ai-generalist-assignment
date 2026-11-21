@@ -1,0 +1,16 @@
+{
+  "id": "c04_hindi_deposit",
+  "title": "Hindi (Devanagari) rent deposit",
+  "today": "2026-11-21",
+  "turns": [
+    "मेरे मकान मालिक ने 25000 रुपये जमा वापस नहीं किए। मैंने 2 महीने पहले किराए का मकान खाली किया। लखनऊ।"
+  ],
+  "tests": [
+    "language: Hindi"
+  ],
+  "expect": {
+    "type": "advice",
+    "category": "rent_deposit",
+    "hindi": true
+  }
+}

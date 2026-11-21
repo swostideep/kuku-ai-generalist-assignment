@@ -1,0 +1,17 @@
+{
+  "id": "c18_monthly_rate",
+  "title": "Monthly salary x months unpaid",
+  "today": "2026-11-21",
+  "turns": [
+    "My employer in Delhi has not paid me for 3 months. My salary is Rs 40,000 per month. I have payslips."
+  ],
+  "tests": [
+    "red-team (added after audit)"
+  ],
+  "expect": {
+    "type": "advice",
+    "category": "unpaid_salary",
+    "amount": "Rs 1.2 lakh",
+    "question_contains": "per month x 3 months"
+  }
+}

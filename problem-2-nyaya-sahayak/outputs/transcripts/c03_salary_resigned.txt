@@ -1,0 +1,50 @@
+>>> USER: I resigned from Brightline Solutions in Hyderabad. My last two months salary of Rs 70,000 is not paid since 3 months. I have payslips and my offer letter and emails with HR.
+
+CASE SUMMARY
+  Problem: Salary / wages not paid
+  Amount: Rs 70,000
+  When: last two months, since 3 months
+  Where: Telangana (from 'hyderabad')
+  Against: Brightline Solutions
+  Proof you mentioned: messages/emails, salary slips/offer letter
+  Proof that would help: resignation/termination letter with date
+
+I NEED TO KNOW
+  - Is Rs 70,000 your monthly salary or the total owed for the 2 months? The notice must state the total.
+  - How much salary is unpaid in total, and for which months?
+
+WHERE YOU STAND
+  - Time check: about 3 months have passed; the usual limit is 36 months [COW-45].
+  - The Code on Wages, 2019 and the other three labour codes came into force on 21 November 2025, replacing older laws such as the Payment of Wages Act, 1936. Some rules are notified separately by each state. [COW-INFORCE]
+  - Wages have time limits: monthly wages are due before the 7th day of the next month; if you resign, are removed, dismissed or retrenched, wages due must be paid within 2 working days. [COW-17]
+  - A claim for unpaid or short-paid wages can be filed before the authority appointed under the Code, by you, your registered trade union, or the Inspector-cum-Facilitator, generally within 3 years from when the claim arose (later only with sufficient cause). The authority aims to decide within 3 months. [COW-45]
+  - Most civil claims to recover money must be filed within 3 years; the exact start date depends on the facts. Do not wait: delay can make a valid claim unenforceable. [LIMITATION]
+
+WHAT YOU CAN DO
+  1. Write to HR/management asking for the exact amount by a date, citing the wage time limits [COW-17].
+  2. Send a legal notice (draft below) if there is no answer.
+  3. File a claim before the wage authority under the Code on Wages through your state Labour Department [COW-45]; a trade union or Inspector-cum-Facilitator can also file for you.
+  4. Keep working records; claims generally must be made within 3 years [COW-45].
+
+LEGAL NOTICE (draft: fill every [BRACKET]; do not send with blanks)
+Date: 2026-11-21
+To: Brightline Solutions
+From: [YOUR NAME, ADDRESS, PHONE]
+
+Subject: Demand for payment of Rs 70,000
+
+I was employed with you as [DESIGNATION] from [DATE]. My wages of Rs 70,000 for [MONTHS] remain unpaid (unpaid since last two months), although wages are due within the time limits under the Code on Wages, 2019.
+
+I call upon you to pay Rs 70,000 within 15 days of receiving this notice, failing which I will take appropriate legal action before the competent forum, at your cost and risk.
+
+[SIGNATURE]
+Send by registered post/speed post with acknowledgement and keep the receipt.
+
+SOURCES
+  [COW-INFORCE] Code on Wages, 2019, Commencement (secondary): https://www.livelaw.in/amp/top-stories/centre-brings-four-labour-codes-into-operation-with-effect-from-november-21-310772
+  [COW-17] Code on Wages, 2019, Section 17 (secondary): https://www.advocatekhoj.com/library/bareacts/codeonwages/17.php
+  [COW-45] Code on Wages, 2019, Section 45 (secondary): https://www.advocatekhoj.com/library/bareacts/codeonwages/45.php
+  [LIMITATION] Limitation Act, 1963, General money claims (general): https://www.indiacode.nic.in/
+  [NALSA] Legal Services Authorities Act, 1987, Section 12; NALSA helpline 15100 (official): https://nalsa.gov.in/legal-services/
+
+This is general legal information from a limited, sourced knowledge base, not legal advice. Laws and rules change and differ by state; confirm with a lawyer or free legal aid (15100) before acting.

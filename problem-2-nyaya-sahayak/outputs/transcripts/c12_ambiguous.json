@@ -1,0 +1,23 @@
+{
+  "id": "c12_ambiguous",
+  "title": "Too vague to classify",
+  "tests": [
+    "ambiguous input"
+  ],
+  "expect": {
+    "type": "ask"
+  },
+  "turns": [
+    {
+      "user": "Someone owes me money and is not paying. Help.",
+      "response": {
+        "disclaimer": "This is general legal information from a limited, sourced knowledge base, not legal advice. Laws and rules change and differ by state; confirm with a lawyer or free legal aid (15100) before acting.",
+        "language": "en",
+        "type": "ask",
+        "message": "I'm not sure which kind of problem this is. Is it (1) a refund or defective product/service, (2) a landlord not returning your deposit, or (3) salary not paid? Tell me in your own words.",
+        "sources": []
+      },
+      "rendered": "I'm not sure which kind of problem this is. Is it (1) a refund or defective product/service, (2) a landlord not returning your deposit, or (3) salary not paid? Tell me in your own words.\n\nThis is general legal information from a limited, sourced knowledge base, not legal advice. Laws and rules change and differ by state; confirm with a lawyer or free legal aid (15100) before acting."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "c12_ambiguous",
+  "title": "Too vague to classify",
+  "today": "2026-11-21",
+  "turns": [
+    "Someone owes me money and is not paying. Help."
+  ],
+  "tests": [
+    "ambiguous input"
+  ],
+  "expect": {
+    "type": "ask"
+  }
+}

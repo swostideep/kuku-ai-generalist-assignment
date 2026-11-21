@@ -1,0 +1,16 @@
+{
+  "id": "c06_no_evidence",
+  "title": "Deposit with no written agreement or receipt",
+  "today": "2026-11-21",
+  "turns": [
+    "Landlord took 30000 rs deposit in cash. I don't have any agreement or receipt. I left the flat in Pune 1 month ago."
+  ],
+  "tests": [
+    "missing evidence"
+  ],
+  "expect": {
+    "type": "advice",
+    "category": "rent_deposit",
+    "lawyer_trigger": "written proof"
+  }
+}

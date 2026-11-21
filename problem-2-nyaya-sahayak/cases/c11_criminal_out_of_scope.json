@@ -1,0 +1,18 @@
+{
+  "id": "c11_criminal_out_of_scope",
+  "title": "Criminal matter",
+  "today": "2026-11-21",
+  "turns": [
+    "Police arrested my brother last night and filed an FIR for theft. What should we do about bail?"
+  ],
+  "tests": [
+    "out of scope",
+    "escalation to lawyer"
+  ],
+  "expect": {
+    "type": "out_of_scope",
+    "cites": [
+      "NALSA"
+    ]
+  }
+}

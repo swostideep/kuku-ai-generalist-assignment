@@ -1,0 +1,16 @@
+{
+  "id": "c14_large_amount",
+  "title": "Large refund from a builder",
+  "today": "2026-11-21",
+  "turns": [
+    "The builder took Rs 45 lakh for a flat booking and cancelled the project. They promised a refund in writing but nothing came for 8 months. I have receipts and the allotment letter."
+  ],
+  "tests": [
+    "escalation: large amount"
+  ],
+  "expect": {
+    "type": "advice",
+    "category": "consumer_refund",
+    "lawyer_trigger": "large"
+  }
+}

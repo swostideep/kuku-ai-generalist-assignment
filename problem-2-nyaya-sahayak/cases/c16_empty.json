@@ -1,0 +1,14 @@
+{
+  "id": "c16_empty",
+  "title": "Empty message",
+  "today": "2026-11-21",
+  "turns": [
+    ""
+  ],
+  "tests": [
+    "empty input"
+  ],
+  "expect": {
+    "type": "ask"
+  }
+}

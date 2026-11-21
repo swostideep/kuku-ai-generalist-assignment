@@ -1,0 +1,17 @@
+{
+  "id": "c19_partial_return",
+  "title": "Landlord returned part of the deposit",
+  "today": "2026-11-21",
+  "turns": [
+    "Landlord in Pune returned only Rs 10,000 of my Rs 40,000 deposit, saying painting charges. I left 1 month ago with the agreement."
+  ],
+  "tests": [
+    "red-team (added after audit)"
+  ],
+  "expect": {
+    "type": "advice",
+    "category": "rent_deposit",
+    "amount": "Rs 30,000",
+    "no_question": "different amounts"
+  }
+}

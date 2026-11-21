@@ -1,0 +1,16 @@
+{
+  "id": "c07_contradiction",
+  "title": "User gives two different deposit amounts",
+  "today": "2026-11-21",
+  "turns": [
+    "My landlord in Chennai kept my deposit of Rs 40,000. I moved out 2 months ago and have the agreement.",
+    "Sorry, the deposit was Rs 50,000 actually."
+  ],
+  "tests": [
+    "contradictory facts"
+  ],
+  "expect": {
+    "type": "advice",
+    "question_contains": "different amounts for the deposit"
+  }
+}

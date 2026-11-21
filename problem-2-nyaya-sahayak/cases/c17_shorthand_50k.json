@@ -1,0 +1,16 @@
+{
+  "id": "c17_shorthand_50k",
+  "title": "Amount written as '50k'",
+  "today": "2026-11-21",
+  "turns": [
+    "My landlord in Mumbai has not returned my 50k deposit. I left 2 months ago, have the agreement."
+  ],
+  "tests": [
+    "red-team (added after audit)"
+  ],
+  "expect": {
+    "type": "advice",
+    "category": "rent_deposit",
+    "amount": "Rs 50,000"
+  }
+}

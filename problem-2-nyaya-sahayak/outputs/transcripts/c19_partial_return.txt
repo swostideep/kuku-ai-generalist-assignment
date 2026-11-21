@@ -1,0 +1,52 @@
+>>> USER: Landlord in Pune returned only Rs 10,000 of my Rs 40,000 deposit, saying painting charges. I left 1 month ago with the agreement.
+
+CASE SUMMARY
+  Problem: Landlord not returning the security deposit
+  Amount: Rs 30,000
+  When: 1 month ago
+  Where: Maharashtra (from 'pune')
+  Against: not given
+  Proof you mentioned: written agreement
+  Proof that would help: proof you paid the deposit (bank transfer/receipt), rent payment history, photos/video of the flat when you left, messages asking for the deposit back
+
+I NEED TO KNOW
+  - From 'returned only Rs 10,000 of my Rs 40,000', I took the withheld amount as Rs 30,000. Is that right?
+  - What is the landlord's name and the flat address?
+
+WHERE YOU STAND
+  - Time check: about 1 months have passed; the usual limit is 36 months [LIMITATION].
+  - The Model Tenancy Act caps a residential security deposit at 2 months' rent and sets up Rent Authorities and Rent Courts. It is only a model: it applies only where your state has adopted it; many states still use their own older rent laws. [MTA-2021]
+  - Many money disputes can be settled at a Lok Adalat, including before a case is filed; there is no court fee and settlements are binding. Ask the District Legal Services Authority. [LOKADALAT]
+  - A civil suit (for example to recover your deposit) is generally filed in the court where the other party lives or works, or where the cause of action arose. [CPC-20]
+  - If the money is owed under a written contract (such as a signed rent agreement), a faster 'summary suit' may be possible in courts where Order XXXVII applies. A lawyer should advise if it fits. [CPC-O37]
+  - Most civil claims to recover money must be filed within 3 years; the exact start date depends on the facts. Do not wait: delay can make a valid claim unenforceable. [LIMITATION]
+
+WHAT YOU CAN DO
+  1. Ask in writing (WhatsApp/email) for the deposit with an itemised list of any deductions, and a deadline.
+  2. Send a formal legal notice (draft below) by registered post / speed post and keep the receipt.
+  3. Try settlement at a Lok Adalat through the District Legal Services Authority [LOKADALAT].
+  4. If still unpaid, a civil suit for recovery in the proper court [CPC-20] (summary suit may fit a written agreement [CPC-O37]). Mind the time limit [LIMITATION]. If your state adopted the Model Tenancy Act, a Rent Authority may be available [MTA-2021].
+
+LEGAL NOTICE (draft: fill every [BRACKET]; do not send with blanks)
+Date: 2026-11-21
+To: [NAME OF THE OTHER PARTY]
+From: [YOUR NAME, ADDRESS, PHONE]
+
+Subject: Demand for payment of Rs 30,000
+
+I was your tenant at [FLAT ADDRESS] under an agreement dated [DATE]. I paid a security deposit of Rs 30,000. I vacated and handed over possession on 1 month ago [DATE]. You have not returned the deposit and have not given any itemised account of deductions.
+
+I call upon you to pay Rs 30,000 within 15 days of receiving this notice, failing which I will take appropriate legal action before the competent forum, at your cost and risk.
+
+[SIGNATURE]
+Send by registered post/speed post with acknowledgement and keep the receipt.
+
+SOURCES
+  [MTA-2021] Model Tenancy Act, 2021 (model law), Security deposit cap (secondary): https://www.deccanherald.com/india/union-cabinet-approves-model-tenancy-act-district-wise-rent-courts-new-security-deposit-rules-992937.html
+  [LOKADALAT] Legal Services Authorities Act, 1987, Lok Adalat (general): https://nalsa.gov.in/legal-services/
+  [CPC-20] Code of Civil Procedure, 1908, Section 20 (general): https://www.indiacode.nic.in/
+  [CPC-O37] Code of Civil Procedure, 1908, Order XXXVII (general): https://www.indiacode.nic.in/
+  [LIMITATION] Limitation Act, 1963, General money claims (general): https://www.indiacode.nic.in/
+  [NALSA] Legal Services Authorities Act, 1987, Section 12; NALSA helpline 15100 (official): https://nalsa.gov.in/legal-services/
+
+This is general legal information from a limited, sourced knowledge base, not legal advice. Laws and rules change and differ by state; confirm with a lawyer or free legal aid (15100) before acting.

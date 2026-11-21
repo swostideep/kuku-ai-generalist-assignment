@@ -1,0 +1,15 @@
+{
+  "id": "c08_eviction_urgent",
+  "title": "Landlord changed the locks, belongings inside",
+  "today": "2026-11-21",
+  "turns": [
+    "My landlord changed the locks today while I was at work and my things are inside. He also kept my rent deposit of Rs 20,000. Delhi."
+  ],
+  "tests": [
+    "urgent situation"
+  ],
+  "expect": {
+    "type": "advice",
+    "lawyer_trigger": "deadline/hearing/eviction"
+  }
+}

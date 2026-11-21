@@ -1,0 +1,16 @@
+{
+  "id": "c25_government_job",
+  "title": "Government employee salary",
+  "today": "2026-11-21",
+  "turns": [
+    "I am a government school teacher, my salary of Rs 60,000 is pending for 4 months in Bihar."
+  ],
+  "tests": [
+    "red-team (added after audit)"
+  ],
+  "expect": {
+    "type": "advice",
+    "lawyer_trigger": "government",
+    "question_contains": "monthly salary or the total"
+  }
+}

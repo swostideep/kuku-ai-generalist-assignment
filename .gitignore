@@ -1,0 +1,26 @@
+# --- Confidential: Kuku screenplay input pack and anything derived from it -----------------
+# Never commit the input pack, extracted scripts, full-pack outputs, or docs/PDFs that quote it.
+inputs/
+*.zip
+**/episode-*.txt
+problem-1-promo-finder/outputs/
+problem-3-continuity-checker/outputs/
+*.pdf
+**/review.html
+
+# --- Secrets ------------------------------------------------------------------------------
+.env
+.env.*
+*.key
+*.pem
+**/.model_cache/
+
+# --- Python / tooling ----------------------------------------------------------------------
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.DS_Store
+.vscode/
+.idea/

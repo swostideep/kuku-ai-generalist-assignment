@@ -1,0 +1,16 @@
+{
+  "id": "c05_hinglish_salary",
+  "title": "Hinglish salary",
+  "today": "2026-11-21",
+  "turns": [
+    "Meri company ne 3 months se salary nahi di hai, total 45000 rupaye. Mujhe kya karna chahiye? Main Noida me kaam karta hu."
+  ],
+  "tests": [
+    "language: Hinglish"
+  ],
+  "expect": {
+    "type": "advice",
+    "category": "unpaid_salary",
+    "hindi": true
+  }
+}

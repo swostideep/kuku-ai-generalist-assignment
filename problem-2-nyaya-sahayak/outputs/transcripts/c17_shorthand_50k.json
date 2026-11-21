@@ -1,0 +1,118 @@
+{
+  "id": "c17_shorthand_50k",
+  "title": "Amount written as '50k'",
+  "tests": [
+    "red-team (added after audit)"
+  ],
+  "expect": {
+    "type": "advice",
+    "category": "rent_deposit",
+    "amount": "Rs 50,000"
+  },
+  "turns": [
+    {
+      "user": "My landlord in Mumbai has not returned my 50k deposit. I left 2 months ago, have the agreement.",
+      "response": {
+        "disclaimer": "This is general legal information from a limited, sourced knowledge base, not legal advice. Laws and rules change and differ by state; confirm with a lawyer or free legal aid (15100) before acting.",
+        "language": "en",
+        "type": "advice",
+        "category": "rent_deposit",
+        "case_summary": {
+          "problem": "Landlord not returning the security deposit",
+          "amount_claimed": "Rs 50,000",
+          "when": "2 months ago",
+          "where": "Maharashtra (from 'mumbai')",
+          "against": "not given",
+          "proof_you_mentioned": [
+            "written agreement"
+          ],
+          "proof_that_would_help": [
+            "proof you paid the deposit (bank transfer/receipt)",
+            "rent payment history",
+            "photos/video of the flat when you left",
+            "messages asking for the deposit back"
+          ],
+          "you_said_you_do_not_have": []
+        },
+        "questions": [
+          "What is the landlord's name and the flat address?"
+        ],
+        "where_you_stand": [
+          "Time check: about 2 months have passed; the usual limit is 36 months [LIMITATION].",
+          "The Model Tenancy Act caps a residential security deposit at 2 months' rent and sets up Rent Authorities and Rent Courts. It is only a model: it applies only where your state has adopted it; many states still use their own older rent laws. [MTA-2021]",
+          "Many money disputes can be settled at a Lok Adalat, including before a case is filed; there is no court fee and settlements are binding. Ask the District Legal Services Authority. [LOKADALAT]",
+          "A civil suit (for example to recover your deposit) is generally filed in the court where the other party lives or works, or where the cause of action arose. [CPC-20]",
+          "If the money is owed under a written contract (such as a signed rent agreement), a faster 'summary suit' may be possible in courts where Order XXXVII applies. A lawyer should advise if it fits. [CPC-O37]",
+          "Most civil claims to recover money must be filed within 3 years; the exact start date depends on the facts. Do not wait: delay can make a valid claim unenforceable. [LIMITATION]"
+        ],
+        "options": [
+          "Ask in writing (WhatsApp/email) for the deposit with an itemised list of any deductions, and a deadline.",
+          "Send a formal legal notice (draft below) by registered post / speed post and keep the receipt.",
+          "Try settlement at a Lok Adalat through the District Legal Services Authority [LOKADALAT].",
+          "If still unpaid, a civil suit for recovery in the proper court [CPC-20] (summary suit may fit a written agreement [CPC-O37]). Mind the time limit [LIMITATION]. If your state adopted the Model Tenancy Act, a Rent Authority may be available [MTA-2021]."
+        ],
+        "see_a_lawyer_if": [],
+        "draft_notice": "LEGAL NOTICE (draft: fill every [BRACKET]; do not send with blanks)\nDate: 2026-11-21\nTo: [NAME OF THE OTHER PARTY]\nFrom: [YOUR NAME, ADDRESS, PHONE]\n\nSubject: Demand for payment of Rs 50,000\n\nI was your tenant at [FLAT ADDRESS] under an agreement dated [DATE]. I paid a security deposit of Rs 50,000. I vacated and handed over possession on 2 months ago [DATE]. You have not returned the deposit and have not given any itemised account of deductions.\n\nI call upon you to pay Rs 50,000 within 15 days of receiving this notice, failing which I will take appropriate legal action before the competent forum, at your cost and risk.\n\n[SIGNATURE]\nSend by registered post/speed post with acknowledgement and keep the receipt.",
+        "citations": [
+          "MTA-2021",
+          "LOKADALAT",
+          "CPC-20",
+          "CPC-O37",
+          "LIMITATION",
+          "NALSA"
+        ],
+        "sources": [
+          {
+            "id": "MTA-2021",
+            "law": "Model Tenancy Act, 2021 (model law)",
+            "ref": "Security deposit cap",
+            "verification": "secondary",
+            "url": "https://www.deccanherald.com/india/union-cabinet-approves-model-tenancy-act-district-wise-rent-courts-new-security-deposit-rules-992937.html",
+            "caveat": "Adoption varies by state and the tool cannot confirm your state's current law."
+          },
+          {
+            "id": "LOKADALAT",
+            "law": "Legal Services Authorities Act, 1987",
+            "ref": "Lok Adalat",
+            "verification": "general",
+            "url": "https://nalsa.gov.in/legal-services/",
+            "caveat": ""
+          },
+          {
+            "id": "CPC-20",
+            "law": "Code of Civil Procedure, 1908",
+            "ref": "Section 20",
+            "verification": "general",
+            "url": "https://www.indiacode.nic.in/",
+            "caveat": ""
+          },
+          {
+            "id": "CPC-O37",
+            "law": "Code of Civil Procedure, 1908",
+            "ref": "Order XXXVII",
+            "verification": "general",
+            "url": "https://www.indiacode.nic.in/",
+            "caveat": ""
+          },
+          {
+            "id": "LIMITATION",
+            "law": "Limitation Act, 1963",
+            "ref": "General money claims",
+            "verification": "general",
+            "url": "https://www.indiacode.nic.in/",
+            "caveat": "The exact article and start date need a lawyer's check."
+          },
+          {
+            "id": "NALSA",
+            "law": "Legal Services Authorities Act, 1987",
+            "ref": "Section 12; NALSA helpline 15100",
+            "verification": "official",
+            "url": "https://nalsa.gov.in/legal-services/",
+            "caveat": ""
+          }
+        ]
+      },
+      "rendered": "CASE SUMMARY\n  Problem: Landlord not returning the security deposit\n  Amount: Rs 50,000\n  When: 2 months ago\n  Where: Maharashtra (from 'mumbai')\n  Against: not given\n  Proof you mentioned: written agreement\n  Proof that would help: proof you paid the deposit (bank transfer/receipt), rent payment history, photos/video of the flat when you left, messages asking for the deposit back\n\nI NEED TO KNOW\n  - What is the landlord's name and the flat address?\n\nWHERE YOU STAND\n  - Time check: about 2 months have passed; the usual limit is 36 months [LIMITATION].\n  - The Model Tenancy Act caps a residential security deposit at 2 months' rent and sets up Rent Authorities and Rent Courts. It is only a model: it applies only where your state has adopted it; many states still use their own older rent laws. [MTA-2021]\n  - Many money disputes can be settled at a Lok Adalat, including before a case is filed; there is no court fee and settlements are binding. Ask the District Legal Services Authority. [LOKADALAT]\n  - A civil suit (for example to recover your deposit) is generally filed in the court where the other party lives or works, or where the cause of action arose. [CPC-20]\n  - If the money is owed under a written contract (such as a signed rent agreement), a faster 'summary suit' may be possible in courts where Order XXXVII applies. A lawyer should advise if it fits. [CPC-O37]\n  - Most civil claims to recover money must be filed within 3 years; the exact start date depends on the facts. Do not wait: delay can make a valid claim unenforceable. [LIMITATION]\n\nWHAT YOU CAN DO\n  1. Ask in writing (WhatsApp/email) for the deposit with an itemised list of any deductions, and a deadline.\n  2. Send a formal legal notice (draft below) by registered post / speed post and keep the receipt.\n  3. Try settlement at a Lok Adalat through the District Legal Services Authority [LOKADALAT].\n  4. If still unpaid, a civil suit for recovery in the proper court [CPC-20] (summary suit may fit a written agreement [CPC-O37]). Mind the time limit [LIMITATION]. If your state adopted the Model Tenancy Act, a Rent Authority may be available [MTA-2021].\n\nLEGAL NOTICE (draft: fill every [BRACKET]; do not send with blanks)\nDate: 2026-11-21\nTo: [NAME OF THE OTHER PARTY]\nFrom: [YOUR NAME, ADDRESS, PHONE]\n\nSubject: Demand for payment of Rs 50,000\n\nI was your tenant at [FLAT ADDRESS] under an agreement dated [DATE]. I paid a security deposit of Rs 50,000. I vacated and handed over possession on 2 months ago [DATE]. You have not returned the deposit and have not given any itemised account of deductions.\n\nI call upon you to pay Rs 50,000 within 15 days of receiving this notice, failing which I will take appropriate legal action before the competent forum, at your cost and risk.\n\n[SIGNATURE]\nSend by registered post/speed post with acknowledgement and keep the receipt.\n\nSOURCES\n  [MTA-2021] Model Tenancy Act, 2021 (model law), Security deposit cap (secondary): https://www.deccanherald.com/india/union-cabinet-approves-model-tenancy-act-district-wise-rent-courts-new-security-deposit-rules-992937.html\n  [LOKADALAT] Legal Services Authorities Act, 1987, Lok Adalat (general): https://nalsa.gov.in/legal-services/\n  [CPC-20] Code of Civil Procedure, 1908, Section 20 (general): https://www.indiacode.nic.in/\n  [CPC-O37] Code of Civil Procedure, 1908, Order XXXVII (general): https://www.indiacode.nic.in/\n  [LIMITATION] Limitation Act, 1963, General money claims (general): https://www.indiacode.nic.in/\n  [NALSA] Legal Services Authorities Act, 1987, Section 12; NALSA helpline 15100 (official): https://nalsa.gov.in/legal-services/\n\nThis is general legal information from a limited, sourced knowledge base, not legal advice. Laws and rules change and differ by state; confirm with a lawyer or free legal aid (15100) before acting."
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "id": "c05_hinglish_salary",
+  "title": "Hinglish salary",
+  "tests": [
+    "language: Hinglish"
+  ],
+  "expect": {
+    "type": "advice",
+    "category": "unpaid_salary",
+    "hindi": true
+  },
+  "turns": [
+    {
+      "user": "Meri company ne 3 months se salary nahi di hai, total 45000 rupaye. Mujhe kya karna chahiye? Main Noida me kaam karta hu.",
+      "response": {
+        "disclaimer": "This is general legal information from a limited, sourced knowledge base, not legal advice. Laws and rules change and differ by state; confirm with a lawyer or free legal aid (15100) before acting.",
+        "language": "hinglish",
+        "type": "advice",
+        "category": "unpaid_salary",
+        "case_summary": {
+          "problem": "Salary / wages not paid",
+          "amount_claimed": "Rs 45,000",
+          "when": "not given",
+          "where": "Uttar Pradesh (from 'noida')",
+          "against": "not given",
+          "proof_you_mentioned": [
+            "none yet"
+          ],
+          "proof_that_would_help": [
+            "offer/appointment letter or contract",
+            "salary slips and bank statements showing what was paid",
+            "attendance records, emails or chats showing you worked",
+            "resignation/termination letter with date",
+            "any written promise to pay"
+          ],
+          "you_said_you_do_not_have": []
+        },
+        "questions": [
+          "Is Rs 45,000 your monthly salary or the total owed for the 3 months? The notice must state the total.",
+          "How much salary is unpaid in total, and for which months?",
+          "Since when has salary not been paid? Are you still working there?",
+          "What is the employer's (company's) name?"
+        ],
+        "where_you_stand": [
+          "The Code on Wages, 2019 and the other three labour codes came into force on 21 November 2025, replacing older laws such as the Payment of Wages Act, 1936. Some rules are notified separately by each state. [COW-INFORCE]",
+          "Wages have time limits: monthly wages are due before the 7th day of the next month; if you resign, are removed, dismissed or retrenched, wages due must be paid within 2 working days. [COW-17]",
+          "A claim for unpaid or short-paid wages can be filed before the authority appointed under the Code, by you, your registered trade union, or the Inspector-cum-Facilitator, generally within 3 years from when the claim arose (later only with sufficient cause). The authority aims to decide within 3 months. [COW-45]",
+          "Most civil claims to recover money must be filed within 3 years; the exact start date depends on the facts. Do not wait: delay can make a valid claim unenforceable. [LIMITATION]"
+        ],
+        "options": [
+          "Write to HR/management asking for the exact amount by a date, citing the wage time limits [COW-17].",
+          "Send a legal notice (draft below) if there is no answer.",
+          "File a claim before the wage authority under the Code on Wages through your state Labour Department [COW-45]; a trade union or Inspector-cum-Facilitator can also file for you.",
+          "Keep working records; claims generally must be made within 3 years [COW-45]."
+        ],
+        "see_a_lawyer_if": [
+          "You have not mentioned any written proof yet; a lawyer can advise what else counts as evidence."
+        ],
+        "draft_notice": "LEGAL NOTICE (draft: fill every [BRACKET]; do not send with blanks)\nDate: 2026-11-21\nTo: [NAME OF THE OTHER PARTY]\nFrom: [YOUR NAME, ADDRESS, PHONE]\n\nSubject: Demand for payment of Rs 45,000\n\nI was employed with you as [DESIGNATION] from [DATE]. My wages of Rs 45,000 for [MONTHS] remain unpaid (unpaid since [DATE]), although wages are due within the time limits under the Code on Wages, 2019.\n\nI call upon you to pay Rs 45,000 within 15 days of receiving this notice, failing which I will take appropriate legal action before the competent forum, at your cost and risk.\n\n[SIGNATURE]\nSend by registered post/speed post with acknowledgement and keep the receipt.",
+        "citations": [
+          "COW-INFORCE",
+          "COW-17",
+          "COW-45",
+          "LIMITATION",
+          "NALSA"
+        ],
+        "sources": [
+          {
+            "id": "COW-INFORCE",
+            "law": "Code on Wages, 2019",
+            "ref": "Commencement",
+            "verification": "secondary",
+            "url": "https://www.livelaw.in/amp/top-stories/centre-brings-four-labour-codes-into-operation-with-effect-from-november-21-310772",
+            "caveat": ""
+          },
+          {
+            "id": "COW-17",
+            "law": "Code on Wages, 2019",
+            "ref": "Section 17",
+            "verification": "secondary",
+            "url": "https://www.advocatekhoj.com/library/bareacts/codeonwages/17.php",
+            "caveat": "The government can prescribe other time limits; state rules may differ."
+          },
+          {
+            "id": "COW-45",
+            "law": "Code on Wages, 2019",
+            "ref": "Section 45",
+            "verification": "secondary",
+            "url": "https://www.advocatekhoj.com/library/bareacts/codeonwages/45.php",
+            "caveat": "Which officer is the 'authority' is set by your state; ask the local Labour Department."
+          },
+          {
+            "id": "LIMITATION",
+            "law": "Limitation Act, 1963",
+            "ref": "General money claims",
+            "verification": "general",
+            "url": "https://www.indiacode.nic.in/",
+            "caveat": "The exact article and start date need a lawyer's check."
+          },
+          {
+            "id": "NALSA",
+            "law": "Legal Services Authorities Act, 1987",
+            "ref": "Section 12; NALSA helpline 15100",
+            "verification": "official",
+            "url": "https://nalsa.gov.in/legal-services/",
+            "caveat": ""
+          }
+        ],
+        "hindi_summary": "अगले कदम: 1) HR को लिखित में बकाया वेतन और तारीख माँगें। 2) जवाब न मिले तो लीगल नोटिस भेजें। 3) राज्य श्रम विभाग में वेतन संहिता (Code on Wages) के तहत दावा करें — आम तौर पर 3 साल के अंदर। मुफ्त कानूनी सहायता: 15100।"
+      },
+      "rendered": "CASE SUMMARY\n  Problem: Salary / wages not paid\n  Amount: Rs 45,000\n  When: not given\n  Where: Uttar Pradesh (from 'noida')\n  Against: not given\n  Proof you mentioned: none yet\n  Proof that would help: offer/appointment letter or contract, salary slips and bank statements showing what was paid, attendance records, emails or chats showing you worked, resignation/termination letter with date, any written promise to pay\n\nI NEED TO KNOW\n  - Is Rs 45,000 your monthly salary or the total owed for the 3 months? The notice must state the total.\n  - How much salary is unpaid in total, and for which months?\n  - Since when has salary not been paid? Are you still working there?\n  - What is the employer's (company's) name?\n\nWHERE YOU STAND\n  - The Code on Wages, 2019 and the other three labour codes came into force on 21 November 2025, replacing older laws such as the Payment of Wages Act, 1936. Some rules are notified separately by each state. [COW-INFORCE]\n  - Wages have time limits: monthly wages are due before the 7th day of the next month; if you resign, are removed, dismissed or retrenched, wages due must be paid within 2 working days. [COW-17]\n  - A claim for unpaid or short-paid wages can be filed before the authority appointed under the Code, by you, your registered trade union, or the Inspector-cum-Facilitator, generally within 3 years from when the claim arose (later only with sufficient cause). The authority aims to decide within 3 months. [COW-45]\n  - Most civil claims to recover money must be filed within 3 years; the exact start date depends on the facts. Do not wait: delay can make a valid claim unenforceable. [LIMITATION]\n\nWHAT YOU CAN DO\n  1. Write to HR/management asking for the exact amount by a date, citing the wage time limits [COW-17].\n  2. Send a legal notice (draft below) if there is no answer.\n  3. File a claim before the wage authority under the Code on Wages through your state Labour Department [COW-45]; a trade union or Inspector-cum-Facilitator can also file for you.\n  4. Keep working records; claims generally must be made within 3 years [COW-45].\n\nGET A LAWYER / LEGAL AID BECAUSE\n  - You have not mentioned any written proof yet; a lawyer can advise what else counts as evidence.\n\nअगले कदम: 1) HR को लिखित में बकाया वेतन और तारीख माँगें। 2) जवाब न मिले तो लीगल नोटिस भेजें। 3) राज्य श्रम विभाग में वेतन संहिता (Code on Wages) के तहत दावा करें — आम तौर पर 3 साल के अंदर। मुफ्त कानूनी सहायता: 15100।\n\nLEGAL NOTICE (draft: fill every [BRACKET]; do not send with blanks)\nDate: 2026-11-21\nTo: [NAME OF THE OTHER PARTY]\nFrom: [YOUR NAME, ADDRESS, PHONE]\n\nSubject: Demand for payment of Rs 45,000\n\nI was employed with you as [DESIGNATION] from [DATE]. My wages of Rs 45,000 for [MONTHS] remain unpaid (unpaid since [DATE]), although wages are due within the time limits under the Code on Wages, 2019.\n\nI call upon you to pay Rs 45,000 within 15 days of receiving this notice, failing which I will take appropriate legal action before the competent forum, at your cost and risk.\n\n[SIGNATURE]\nSend by registered post/speed post with acknowledgement and keep the receipt.\n\nSOURCES\n  [COW-INFORCE] Code on Wages, 2019, Commencement (secondary): https://www.livelaw.in/amp/top-stories/centre-brings-four-labour-codes-into-operation-with-effect-from-november-21-310772\n  [COW-17] Code on Wages, 2019, Section 17 (secondary): https://www.advocatekhoj.com/library/bareacts/codeonwages/17.php\n  [COW-45] Code on Wages, 2019, Section 45 (secondary): https://www.advocatekhoj.com/library/bareacts/codeonwages/45.php\n  [LIMITATION] Limitation Act, 1963, General money claims (general): https://www.indiacode.nic.in/\n  [NALSA] Legal Services Authorities Act, 1987, Section 12; NALSA helpline 15100 (official): https://nalsa.gov.in/legal-services/\n\nThis is general legal information from a limited, sourced knowledge base, not legal advice. Laws and rules change and differ by state; confirm with a lawyer or free legal aid (15100) before acting."
+    }
+  ]
+}

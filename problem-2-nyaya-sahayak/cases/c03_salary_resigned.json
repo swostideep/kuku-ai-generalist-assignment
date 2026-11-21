@@ -1,0 +1,19 @@
+{
+  "id": "c03_salary_resigned",
+  "title": "Resigned, final salary unpaid",
+  "today": "2026-11-21",
+  "turns": [
+    "I resigned from Brightline Solutions in Hyderabad. My last two months salary of Rs 70,000 is not paid since 3 months. I have payslips and my offer letter and emails with HR."
+  ],
+  "tests": [
+    "normal input"
+  ],
+  "expect": {
+    "type": "advice",
+    "category": "unpaid_salary",
+    "cites": [
+      "COW-17",
+      "COW-45"
+    ]
+  }
+}

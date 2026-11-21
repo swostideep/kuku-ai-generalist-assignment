@@ -1,0 +1,20 @@
+{
+  "id": "c01_refund_basic",
+  "title": "Defective phone, online order, refund refused",
+  "today": "2026-11-21",
+  "turns": [
+    "I ordered a phone online from ShopKart on 12/09/2026 and paid Rs 18,999 by UPI. It arrived with a broken screen. I complained by email three times and have the invoice and photos, but they refuse a refund."
+  ],
+  "tests": [
+    "normal input"
+  ],
+  "expect": {
+    "type": "advice",
+    "category": "consumer_refund",
+    "cites": [
+      "NCH",
+      "CPA-LIMIT"
+    ],
+    "amount": "Rs 18,999"
+  }
+}

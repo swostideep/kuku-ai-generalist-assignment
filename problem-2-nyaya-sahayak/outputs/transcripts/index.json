@@ -1,0 +1,170 @@
+[
+  {
+    "id": "c01_refund_basic",
+    "title": "Defective phone, online order, refund refused",
+    "final_type": "advice",
+    "category": "consumer_refund"
+  },
+  {
+    "id": "c02_deposit_multi_turn",
+    "title": "Rent deposit, facts arrive over two turns",
+    "final_type": "advice",
+    "category": "rent_deposit"
+  },
+  {
+    "id": "c03_salary_resigned",
+    "title": "Resigned, final salary unpaid",
+    "final_type": "advice",
+    "category": "unpaid_salary"
+  },
+  {
+    "id": "c04_hindi_deposit",
+    "title": "Hindi (Devanagari) rent deposit",
+    "final_type": "advice",
+    "category": "rent_deposit"
+  },
+  {
+    "id": "c05_hinglish_salary",
+    "title": "Hinglish salary",
+    "final_type": "advice",
+    "category": "unpaid_salary"
+  },
+  {
+    "id": "c06_no_evidence",
+    "title": "Deposit with no written agreement or receipt",
+    "final_type": "advice",
+    "category": "rent_deposit"
+  },
+  {
+    "id": "c07_contradiction",
+    "title": "User gives two different deposit amounts",
+    "final_type": "advice",
+    "category": "rent_deposit"
+  },
+  {
+    "id": "c08_eviction_urgent",
+    "title": "Landlord changed the locks, belongings inside",
+    "final_type": "advice",
+    "category": "rent_deposit"
+  },
+  {
+    "id": "c09_violence",
+    "title": "Employer threatens violence over salary demand",
+    "final_type": "advice",
+    "category": "unpaid_salary"
+  },
+  {
+    "id": "c10_jurisdiction_unknown",
+    "title": "Deposit dispute, no state given",
+    "final_type": "advice",
+    "category": "rent_deposit"
+  },
+  {
+    "id": "c11_criminal_out_of_scope",
+    "title": "Criminal matter",
+    "final_type": "out_of_scope",
+    "category": ""
+  },
+  {
+    "id": "c12_ambiguous",
+    "title": "Too vague to classify",
+    "final_type": "ask",
+    "category": ""
+  },
+  {
+    "id": "c13_time_barred",
+    "title": "Consumer complaint after more than 2 years",
+    "final_type": "advice",
+    "category": "consumer_refund"
+  },
+  {
+    "id": "c14_large_amount",
+    "title": "Large refund from a builder",
+    "final_type": "advice",
+    "category": "consumer_refund"
+  },
+  {
+    "id": "c15_injection",
+    "title": "User text tries to make it cite invented law",
+    "final_type": "advice",
+    "category": "rent_deposit"
+  },
+  {
+    "id": "c16_empty",
+    "title": "Empty message",
+    "final_type": "ask",
+    "category": ""
+  },
+  {
+    "id": "c17_shorthand_50k",
+    "title": "Amount written as '50k'",
+    "final_type": "advice",
+    "category": "rent_deposit"
+  },
+  {
+    "id": "c18_monthly_rate",
+    "title": "Monthly salary x months unpaid",
+    "final_type": "advice",
+    "category": "unpaid_salary"
+  },
+  {
+    "id": "c19_partial_return",
+    "title": "Landlord returned part of the deposit",
+    "final_type": "advice",
+    "category": "rent_deposit"
+  },
+  {
+    "id": "c20_negated_danger",
+    "title": "User says there was NO violence",
+    "final_type": "advice",
+    "category": "unpaid_salary"
+  },
+  {
+    "id": "c21_past_hearing",
+    "title": "Hearing in the past is not urgent",
+    "final_type": "advice",
+    "category": "unpaid_salary"
+  },
+  {
+    "id": "c22_landlord_side",
+    "title": "User is the landlord (counterparty role)",
+    "final_type": "out_of_scope",
+    "category": ""
+  },
+  {
+    "id": "c23_insurance",
+    "title": "Insurance claim rejected (not covered)",
+    "final_type": "out_of_scope",
+    "category": ""
+  },
+  {
+    "id": "c24_cheque_bounce",
+    "title": "Cheque bounce (not covered, deadlines)",
+    "final_type": "out_of_scope",
+    "category": ""
+  },
+  {
+    "id": "c25_government_job",
+    "title": "Government employee salary",
+    "final_type": "advice",
+    "category": "unpaid_salary"
+  },
+  {
+    "id": "c26_harassment",
+    "title": "Sexual harassment disclosed alongside salary",
+    "final_type": "advice",
+    "category": "unpaid_salary"
+  },
+  {
+    "id": "c27_locks_today",
+    "title": "Regression: 'while I was at work' must not cancel urgency",
+    "final_type": "advice",
+    "category": "rent_deposit"
+  },
+  {
+    "id": "c28_upi_fraud",
+    "title": "Online fraud in progress",
+    "final_type": "ask",
+    "category": ""
+  }
+]
