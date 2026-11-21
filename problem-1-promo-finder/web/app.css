@@ -1,4 +1,8 @@
 /* Promo Finder: page-specific pieces on top of base.css */
+/* Promo Finder's colour: warm orange, for attention and entertainment. */
+:root { --accent: #b8430f; --accent-hover: #9c380c; --accent-ink: #ffffff; --accent-text: #b03d0c; --accent-soft: #fbe9df; --accent-deep: #8f350c; --focus: #b03d0c; }
+@media (prefers-color-scheme: dark) { :root { --accent: #f39a6b; --accent-hover: #f6b18c; --accent-ink: #2a1206; --accent-text: #f39a6b; --accent-soft: #33190d; --accent-deep: #3a1a0b; --focus: #f39a6b; } }
+.quote .who i { background: var(--green); } /* opening line green, closing line amber, so both differ from the orange brand */
 .live .show-pick { margin-top: var(--s6); }
 .live .show-pick .select { min-height: 40px; }
 .detail-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s8); align-items: end; margin-bottom: var(--s12); }

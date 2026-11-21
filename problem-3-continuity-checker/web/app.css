@@ -1,4 +1,7 @@
-/* Promo Finder: page-specific pieces on top of base.css */
+/* Continuity Checker: page-specific pieces on top of base.css */
+/* Continuity Checker's colour: deep blue, for an editor's accuracy tool. */
+:root { --accent: #163f7a; --accent-hover: #10305e; --accent-ink: #ffffff; --accent-text: #1f4f94; --accent-soft: #e4ecf7; --accent-deep: #102a52; --focus: #1f4f94; }
+@media (prefers-color-scheme: dark) { :root { --accent: #8fb4ec; --accent-hover: #a9c6f1; --accent-ink: #0a1830; --accent-text: #8fb4ec; --accent-soft: #14223a; --accent-deep: #0f1f38; --focus: #8fb4ec; } }
 .live .show-pick { margin-top: var(--s6); }
 .live .show-pick .select { min-height: 40px; }
 .detail-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s8); align-items: end; margin-bottom: var(--s12); }

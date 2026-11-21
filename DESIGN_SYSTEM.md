@@ -24,8 +24,11 @@ hero card built around one big live number.
 
 Rules I held to:
 
-1. **Colour only where it means something.** Errors are red, warnings amber, and the opening and closing lines of a
-   promo get two soft highlights. Everything else is black, white and grey, so colour always carries information.
+1. **One colour per site, used sparingly.** Each site has its own accent, chosen for what it does: warm orange for
+   Promo Finder (attention, entertainment), deep green for Nyaya Sahayak (money recovered, trust) and deep blue for
+   the Continuity Checker (an editor's accuracy tool). It appears in the logo mark, main buttons, the second half of
+   the headline, the current-page underline, card drawings, progress bars and one solid statement block. Everything
+   else is white and grey; red and amber are kept for errors and warnings.
 2. **One big number per home page.** Each site opens with the figure that matters: promos ready to review, or errors
    to fix. The rest of the page explains it.
 3. **Real pages, real addresses.** Every list item has its own URL (`#/promos/12`, `#/findings/3`), so the back button
@@ -37,6 +40,15 @@ Rules I held to:
 ## Tokens
 
 ### Colour
+
+Shared neutrals and status colours live in `base.css`. Each site sets its own accent at the top of its `app.css`:
+
+| Site | `--accent` | Text on white | Statement block | White on accent |
+|---|---|---|---|---|
+| Promo Finder | `#b8430f` orange | `#b03d0c`, 6.0:1 | `#8f350c` | 5.5:1 |
+| Nyaya Sahayak | `#004437` green | `#0f6a52`, 6.5:1 | `#004437` | 11.2:1 |
+| Continuity Checker | `#163f7a` blue | `#1f4f94`, 8.1:1 | `#102a52` | 10.4:1 |
+
 
 | Token | Light | Dark | Used for |
 |---|---|---|---|

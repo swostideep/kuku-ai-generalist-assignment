@@ -44,7 +44,7 @@
       </section>
 
       <section class="section" aria-labelledby="never">
-        <div class="stage"><div class="showcase">
+        <div class="stage deep"><div class="showcase">
           <div>
             <h2 class="h2" id="never">It never makes up the law.</h2>
             <p>The most dangerous answer is a confident wrong one. So every legal statement comes from a fixed, sourced list, and a guard throws out any reply that names an unknown section, Act or case, invents an amount, or promises an outcome.</p>

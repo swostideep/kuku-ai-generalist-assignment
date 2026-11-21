@@ -19,10 +19,11 @@ Kuku material. Screenshots of the real show were taken too, but kept off the pub
 
 ## The design
 
-The direction is monochrome and quiet: white paper, near-black ink, greys and plenty of space, set in a single
-typeface, Geist, which is light at large sizes and regular for reading. Colour appears only where it means
-something: red for errors, amber for warnings, and two soft highlights for the opening and closing lines of a promo.
-Buttons are black pills, sections have small left-aligned titles, and each home page shows its one important number
+The direction is quiet: white paper, near-black ink, greys and plenty of space, set in a single typeface, Geist,
+which is light at large sizes and regular for reading. Each site has one colour of its own, so the three never look
+alike: warm orange for Promo Finder, deep green for Nyaya Sahayak and deep blue for the Continuity Checker. It shows in
+the logo mark, the main buttons, the second half of the headline and one solid statement block; red and amber are kept
+for errors and warnings. Buttons are pills, sections have small left-aligned titles, and each home page shows its one important number
 on a white card sitting on a dotted grey panel. Dark mode follows the operating system.
 
 Each site is now a real website with a header, a home page, a list, a page for every item and an explanation page.

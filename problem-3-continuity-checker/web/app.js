@@ -72,7 +72,7 @@
       </section>
 
       <section class="section" aria-labelledby="rules">
-        <div class="stage"><div class="showcase">
+        <div class="stage deep"><div class="showcase">
           <div>
             <h2 class="h2" id="rules">Rules where they work, judgement where it's needed.</h2>
             <p>Spelling, timing and labels are exact arithmetic, so plain rules are faster, cheaper and easier to test than a model, and the same script always gives the same report. Whether “Harlow” is a typo for “Harrow” or a different family is a judgement, so that is left to an editor.</p>

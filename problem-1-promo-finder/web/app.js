@@ -83,7 +83,7 @@
       </section>
 
       <section class="section" aria-labelledby="gates">
-        <div class="stage"><div class="showcase">
+        <div class="stage deep"><div class="showcase">
           <div>
             <h2 class="h2" id="gates">A strong ending can't rescue a weak opening.</h2>
             <p>Adding scores together let great cliffhangers hide dull first lines. So each part has its own minimum, and a clip has to clear every one. The minimums adjust to the show, so a quieter series still gets promos.</p>
