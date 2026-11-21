@@ -1,10 +1,8 @@
 # AI usage disclosure
 
-> **Before submitting:** confirm the v1 line. I could not see which tool built v1; the folder name only suggests Codex. Add anything else you used, such as ChatGPT for brainstorming.
-
 | Tool | What it contributed | What was checked, and by whom |
 |---|---|---|
-| AI coding assistant for v1 (folder `codex_promo_finder`; **confirm the tool**) | First prototype: parser, window scoring, optional model reranker, two-page PDF | Audited in [AUDIT_v1.md](AUDIT_v1.md): 11 defects found |
+| An earlier AI-assisted prototype, v1 (folder `codex_promo_finder`; the tool used was not recorded) | First prototype: parser, window scoring, optional model reranker, two-page PDF | Audited in [AUDIT_v1.md](AUDIT_v1.md): 11 defects found |
 | Claude Code (Claude Opus 5.5) for v2 | Independent audit of v1; problem-choice matrix; v2 code (parser, signals, gates, selection, model client, reports); 44 tests; evaluation script; draft docs and PDF; a first-pass script review of the top-20 picks | Claude ran everything on the full pack, read the top-20 transcripts and generated the doc figures from `outputs/logs/`. **None of this has been repeated by the candidate yet** (see the checklist below) |
 
 ## Where the AI got it wrong: one concrete case
@@ -33,7 +31,9 @@
 - The confidential input pack was processed locally. It was read by the AI coding assistant as the brief allows, and not uploaded to any other service.
 - No model API was called on the scripts. The model path was tested only against a local mock server.
 
-## Candidate verification checklist (complete before submitting; then edit this section to say what you did)
+## Candidate verification checklist
+
+Status as of 2026-11-21: **pending**. Nothing below has been done by the candidate yet; each item is ticked only when actually done.
 
 - [ ] Run `./reproduce.sh` yourself and confirm the log numbers match the PDF.
 - [ ] Open at least 10 picks in `outputs/review.html` and check each against the screenplay. Write your own verdicts into `ranked_promos.csv`.

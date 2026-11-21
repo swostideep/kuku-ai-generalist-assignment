@@ -2,7 +2,7 @@
 
 ## Which problem is submitted
 
-Kuku's brief: "Pick one problem… One problem, one submission." **The submitted problem is Problem 1 (Promo Finder)** [candidate: change this line if you choose differently]. It is the problem Kuku provided the input pack for, and it has the deepest evidence. Problems 2 and 3 are kept here as a portfolio.
+Kuku's brief: "Pick one problem… One problem, one submission." **The submitted problem is Problem 1 (Promo Finder)**. It is the problem Kuku provided the input pack for, and it has the deepest evidence. Problems 2 and 3 are kept here as a portfolio.
 
 ## Summary of each
 
