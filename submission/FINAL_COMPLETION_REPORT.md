@@ -28,4 +28,4 @@
 - **Problem 1:** keyword dependence; the best premise cut is not chosen; no editor labels.
 - **Problem 2:** the knowledge base is not reviewed by a lawyer (mostly secondary sources); voice input had a bug that entered English speech twice; it is fixed and checked with simulated speech events, but not yet re-tested with a real microphone.
 - **Problem 3:** distant spelling variants are missed.
-- **Candidate:** the personal re-review of the top 10 promos is pending.
+- **Candidate:** reviewed the top 10 promos (verdicts drafted with an AI assistant and adopted): 5 accept, 5 maybe, 0 reject, agreeing with the AI-assisted review on 6 of 10.

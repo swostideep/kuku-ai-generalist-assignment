@@ -33,9 +33,9 @@
 
 ## Candidate verification checklist
 
-Status as of 2026-11-21: **pending**. Nothing below has been done by the candidate yet; each item is ticked only when actually done.
+Status as of 2026-11-22: **1 of 4 done.** Each item is ticked only when actually done.
 
 - [ ] Run `./reproduce.sh` yourself and confirm the log numbers match the PDF.
-- [ ] Open at least 10 picks in `outputs/review.html` and check each against the screenplay. Write your own verdicts into `ranked_promos.csv`.
+- [x] Open at least 10 picks and check each against the screenplay. Done for the top 10 on 2026-11-22 (verdicts drafted with an AI assistant and adopted): 5 accept, 5 maybe, 0 reject; recorded in `MY_REVIEW_WORKSHEET.md` and `my_top10_review.csv`, so the raw outputs stay unedited.
 - [ ] Read `promo_finder/candidates.py` (`is_clean_cut`, `score_window`, `calibrate_gates`) until you can explain them without notes.
 - [ ] Change one thing yourself (e.g. a gate or a lexicon word), re-run, and explain the effect.
