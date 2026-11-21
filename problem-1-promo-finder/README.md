@@ -6,7 +6,7 @@ v2 is an audited rebuild of my first version (`codex_promo_finder`). It keeps v1
 
 **Confidential:** the input pack and everything in `outputs/` contain Kuku script text. Share them only with the Kuku reviewers (private repo or restricted link), never publicly.
 
-## v2.1 changes (after an internal audit; see `docs/QUALITY_REVIEW.md`)
+## v2.1 changes (after an internal audit; the full review is in the private submission package)
 
 - **Per-show gate calibration:** gate = min(default, the show's 80th percentile). A show written without acting directions no longer collapses: on the 50 episodes with directions removed, 41 promos / 23 empty episodes became 75 / 6. This show's results are unchanged.
 - **Premise slots:** the first wave always includes the best promos from the opening episodes (`--premise-slots 2`).
@@ -25,9 +25,9 @@ python3 run.py --show "path/to/show_folder"
 
 - Outputs go to `./outputs/`; use `--output <dir>` to change this.
 - `--show` also accepts a single episode `.txt` file. That is the "new input in the interview" case.
-- The full 50-episode pack takes about 45 to 50 s on an Apple M2 laptop and peaks at about 33 MB RAM (`outputs/logs/resource_usage.txt`).
+- The full 50-episode pack takes about 45 to 60 s on an Apple M2 laptop and peaks at about 33 MB RAM (`outputs/logs/resource_usage.txt`).
 
-**Web app.** Run the command below, then open http://localhost:8701. Choose a show, click "Analyse screenplay" (the same pipeline, with a progress bar), then search, filter and open each promo: hook, cliffhanger, timestamps, scores and screenplay lines. Results are written to `outputs/web/<show>/`.
+**Web app.** Run the command below, then open http://localhost:8701. Choose a show, click "Analyse the script" (the same pipeline, with a progress bar), then search, filter and open each promo: hook, cliffhanger, timestamps, scores and screenplay lines. Results are written to `outputs/web/<show>/`.
 
 ```bash
 python3 web.py --shows "path/to/folder_of_shows"
@@ -110,7 +110,7 @@ episode .txt ──► parser.py ──► candidates.py ───────�
 
 ## What is and isn't done
 
-- **Built and verified:** everything above, run on the full pack, with 48 passing tests. Determinism is checked across processes.
+- **Built and verified:** everything above, run on the full pack, with 52 passing tests (48 for the engine, 4 for the web app). Determinism is checked across processes.
 - **Model path:** tested only against a local mock OpenAI-compatible server. No real model was run, because none was available in this environment and none was needed for the baseline. Real model quality is therefore **unmeasured**.
 - **Not built:**
   - Multi-segment promos that join moments, as the brief allows. Every pick is one continuous segment.
@@ -126,6 +126,6 @@ evaluate.py         reference-free quality checks (v1 vs v2), recomputed from th
 reproduce.sh        regenerate outputs + logs
 promo_finder/       parser, signals, candidates, select, judge, report, pipeline
 tests/              unit, adversarial and end-to-end tests with synthetic fixtures
-docs/               solution PDF, design, audit, test report, quality review, interview guide, walkthrough, AI usage
-outputs/            raw outputs from the full input pack
+docs/               design, test report and AI usage (the PDF, audit and reviews quote the script, so they are private)
+outputs/            raw outputs from the full input pack (created when you run it; not in this public repo)
 ```

@@ -1,6 +1,6 @@
 # Test report
 
-**Final state (v2.1): 48 / 48 unit, adversarial and end-to-end tests pass.** The raw log is `outputs/logs/test_results.txt`.
+**Final state (v2.1 + web app): 52 / 52 tests pass: 48 unit, adversarial and end-to-end tests, plus 4 web API tests.** The raw log is `outputs/logs/test_results.txt`.
 
 - **Fixtures** are synthetic screenplays (`tests/fixtures.py`), so no Kuku text is in the tests.
 - **Full-pack system checks** are below the table. Their logs are in `outputs/logs/`.
@@ -58,6 +58,15 @@
 | A02 | Fixture with directions stripped | Still runs end-to-end | As expected. **This also passes on v2.0, so it is only a smoke test.** The proof is `outputs/logs/no_directions_check.txt` (full pack: 41 promos / 23 empty episodes → 75 / 6) | Pass (not discriminating) |
 | A03 | 15 strong late-episode picks + 1 weaker episode-1 pick | Episode 1 lands in the first 10 with premise slots, and not without them | As expected | Pass |
 | A04 | "Because she is marrying him." | Tagged as a reveal | As expected | Pass |
+
+## Web API tests (added with the web app, `tests/test_web.py`)
+
+| ID | Input | Expected | Actual | Result |
+|---|---|---|---|---|
+| W01 | `GET /api/shows` on a synthetic show folder | One show, 3 episodes, no local path sent to the browser | As expected | Pass |
+| W02 | `POST /api/analyse`, then poll `/api/status` | Runs the real pipeline; `/api/results` equals the `ranked_promos.json` written to disk | As expected | Pass |
+| W03 | Unknown show, bad JSON, unknown path, `/../web.py` | 404 / 400 / 404 / 404; no file outside `web/` is served | As expected | Pass |
+| W04 | The page and its assets | All served (200) | As expected | Pass |
 
 ## Full-pack system checks
 

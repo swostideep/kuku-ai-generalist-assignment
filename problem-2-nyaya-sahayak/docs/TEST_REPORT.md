@@ -78,5 +78,5 @@ These 12 inputs were written by an evaluator *after* the first build, to probe i
 
 - **A real LLM.** None was available offline, so the model path is tested only with fake models and a mock server.
 - **Accuracy of the legal content** against a practising lawyer.
-- **Voice input** quality (the browser's speech recogniser, not this code).
+- **Voice input** quality (the browser's speech recogniser, not this code). A bug that entered English speech twice was fixed; the fix was checked with simulated speech events, not yet with a real microphone.
 - **Real users.**
