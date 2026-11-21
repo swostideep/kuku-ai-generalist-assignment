@@ -26,6 +26,6 @@
 
 - **No real LLM run.** The optional model paths are tested only with mock servers.
 - **Problem 1:** keyword dependence; the best premise cut is not chosen; no editor labels.
-- **Problem 2:** the knowledge base is not reviewed by a lawyer (mostly secondary sources); voice input is not tested.
+- **Problem 2:** the knowledge base is not reviewed by a lawyer (mostly secondary sources); voice input had a bug that entered English speech twice; it is fixed and checked with simulated speech events, but not yet re-tested with a real microphone.
 - **Problem 3:** distant spelling variants are missed.
 - **Candidate:** the personal re-review of the top 10 promos is pending.

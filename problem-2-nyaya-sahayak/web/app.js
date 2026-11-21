@@ -193,14 +193,33 @@
   // ---------- Voice (browser speech recognition, if available) ----------
   const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
   if (!SR) { $("#mic").disabled = true; $("#mic").setAttribute("data-tip", "Voice input needs Chrome or Edge"); }
+  // One recogniser at a time. Each result event rebuilds the spoken text from scratch and
+  // replaces it (never appends), so repeated or cumulative events can't duplicate words.
+  let rec = null;
   $("#mic").addEventListener("click", () => {
-    const rec = new SR(); rec.lang = $("#lang").value; rec.interimResults = false;
-    status("Listening… speak now"); $("#mic").setAttribute("aria-pressed", "true");
-    rec.onresult = (e) => { msg.value += (msg.value ? " " : "") + e.results[0][0].transcript; autosize(); };
-    rec.onend = () => { status(""); $("#mic").setAttribute("aria-pressed", "false"); };
-    rec.onerror = () => status("Voice input failed. Please type instead.");
+    if (rec) { rec.stop(); return; }              // second click = stop listening
+    const before = msg.value.trim();
+    rec = new SR(); rec.lang = $("#lang").value; rec.interimResults = true; rec.continuous = false; rec.maxAlternatives = 1;
+    status("Listening… click the mic again to stop"); $("#mic").setAttribute("aria-pressed", "true");
+    rec.onresult = (e) => { msg.value = [before, spoken(e.results)].filter(Boolean).join(" "); autosize(); };
+    rec.onend = () => { rec = null; status(""); $("#mic").setAttribute("aria-pressed", "false"); msg.focus(); };
+    rec.onerror = (e) => { if (e.error !== "aborted" && e.error !== "no-speech") status("Voice input failed. Please type instead."); };
     rec.start();
   });
+  // Joins result segments, dropping a segment that only repeats what came before it
+  // (some Chrome builds, notably on Android, resend the earlier words in every new segment).
+  function spoken(results) {
+    let text = "";
+    for (let i = 0; i < results.length; i++) {
+      const part = results[i][0].transcript.trim();
+      if (!part) continue;
+      const low = part.toLowerCase(), have = text.toLowerCase();
+      if (have && low.startsWith(have)) text = part;          // cumulative segment: replace
+      else if (have.endsWith(low)) continue;                   // exact repeat: skip
+      else text = text ? text + " " + part : part;
+    }
+    return text;
+  }
 
   // ---------- New case ----------
   $("#newCase").addEventListener("click", () => {

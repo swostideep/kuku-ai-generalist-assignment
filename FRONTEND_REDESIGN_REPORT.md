@@ -1,171 +1,116 @@
-# Frontend redesign report
+# A shared web interface for the three tools
 
-All three apps now share one Material Design 3 system ([`DESIGN_SYSTEM.md`](DESIGN_SYSTEM.md)). Promo Finder and Continuity Checker previously had only static HTML reports, so each gained a working web app; Nyaya Sahayak's chat page was rebuilt.
+After the main build I gave all three tools one consistent web interface, based on Google's Material Design 3 (details in [`DESIGN_SYSTEM.md`](DESIGN_SYSTEM.md)).
+Before this, Promo Finder and the Continuity Checker only produced static report pages, so each now has a small web
+app; Nyaya Sahayak's chat page was rebuilt. The engines, their outputs and every command-line tool are unchanged, and
+all the tests still pass.
 
-**Unchanged:**
-- The engines: parsing, scoring, rules, knowledge base, guard.
-- Their outputs and every existing CLI command.
-- The test suites (they still pass).
+## Ground rules I kept to
 
-## Rules followed
+The backend logic stays as it was. Promo Finder's pipeline gained one optional progress callback, used only to show
+“episode 26 of 50”, and still produces the same 83 promos on the full pack. The Continuity Checker's web server calls
+the same functions as its command line and gives the same 40 findings. Nyaya Sahayak's chat API is untouched.
 
-- **Backend logic untouched.**
-  - Promo Finder: `pipeline.run()` gained one optional `progress` callback, used only to report "episode i of n". Results are identical: 83 promos on the full pack, through both the CLI and the web app.
-  - Continuity Checker: the web server calls the same `load` → `run_checks` → `write_all` as `run.py`. It gives 40 findings, 15 of them errors, matching the CLI.
-  - Nyaya Sahayak: `POST /api/turn` is unchanged; the server only gained a fixed allow-list of static files.
-- **Every control does something real.** No placeholder buttons and no invented metrics; every number comes from the backend's JSON.
-- **No new dependencies.** Standard-library Python servers, plain CSS and JS. Each project still runs on its own.
-- **Confidentiality.**
-  - Screenshots in this repository use an invented 8-episode show, [`samples/The Lantern House`](samples/), made by [`samples/make_demo_show.py`](samples/make_demo_show.py).
-  - Screenshots of the real Kuku show are kept outside the repository.
-- **Authorship.** Commits are authored as `swostideep`.
+Every button does something real, and every number on screen comes from the tool's own output. There are no new
+dependencies: the servers use Python's standard library and the pages are plain HTML, CSS and JavaScript. Each project
+still runs on its own.
 
-## What changed, per project
+The screenshots in the public repository use an invented eight-episode show, *The Lantern House*, so they contain no
+Kuku material. Screenshots of the real show were taken too, but kept off the public repository.
 
-### Problem 1: Promo Finder ([`web.py`](problem-1-promo-finder/web.py), [`web/`](problem-1-promo-finder/web/))
+## One design system
 
-**Before:**
-- The only interface was a CLI.
-- It wrote a static `review.html`: one long page of cards with raw scores ("hook 64.0 · cliffhanger 70 · standalone 96.0 · arc 78.6…") and no search, filter or navigation.
+The three apps share one stylesheet and one small script. The colour scheme is built around a calm indigo, which reads
+as serious without looking like an alarm, and gives a second, clearly different colour for marking cliffhangers next
+to hooks. Text uses Roboto on a four-pixel spacing grid. All the main colour pairs meet the WCAG AA contrast standard:
+body text is 16.3 to 1, secondary text 8.9 to 1, and white on the main buttons 6.5 to 1. Errors and warnings always
+carry an icon and a word, never colour alone.
 
-**After:**
-- **Analyse view:** choose a show, then "Analyse screenplay". The real pipeline runs in the background, with a determinate progress bar ("Scoring episode 26 of 50…") and a success banner. "View N ranked promos" becomes the primary action, and "Analyse again" becomes secondary.
-- **Promos view:**
-  - Four summary numbers: promos, episodes covered, windows checked, and episodes with nothing strong enough.
-  - Search over hook, cliffhanger and why-it-works text, plus an episode filter and a "First 10 to post" chip.
-  - A table of rank, episode and clip time, hook, cliffhanger and strength. Strength is a label (Strong / Solid / Weaker) for the top, middle and bottom third within the show; the method is stated under the table.
-- **Detail side sheet:**
-  - Why it works, the hook quote with its reasons, and the cliffhanger quote with its reasons.
-  - Clip metadata: file, segment, cue IDs and clarity notes.
-  - Collapsed sections: five score meters, and the screenplay excerpt with the hook and cut lines highlighted.
-  - Actions: Previous / Next, and "Copy timestamps" for the editor's cut list.
-- **Endpoints:** `GET /api/shows`, `POST /api/analyse`, `GET /api/status`, `GET /api/results`.
+Each screen has one main action. Lists show only what is needed for a decision, and the detail opens in a side panel,
+with the raw evidence (scores, screenplay lines, surrounding cues) folded away inside it.
 
-### Problem 2: Nyaya Sahayak ([`app.py`](problem-2-nyaya-sahayak/app.py), [`web/`](problem-2-nyaya-sahayak/web/))
+## Promo Finder
 
-**Before:** a single page with a chat column and a dense facts box. The draft notice was inline text, and citations were plain IDs.
+Before, the only interface was a long static page of cards showing raw scores, with no search or filters. Now you
+choose a show and click *Analyse screenplay*: the real pipeline runs with a progress bar, then a banner offers the
+ranked list. The list has four summary numbers, a search box, an episode filter and a *First 10 to post* filter. Each
+promo is labelled Strong, Solid or Weaker, meaning the top, middle or bottom third of scores within that show. Opening
+a promo shows why it works, the hook and cliffhanger lines, the clip's details, the scores, and the screenplay excerpt
+with both lines highlighted. You can step to the previous or next promo and copy the timestamps for the edit.
 
-**After:**
-- **Top app bar** with "New case".
-- **Welcome state:** three topic starters (refund, rent deposit, unpaid salary). Each inserts a starter message with `[brackets]` to fill in, so nothing is sent until the user edits it.
-- **Chat:**
-  - A disclaimer banner.
-  - A composer: auto-growing text area, Enter to send, Shift+Enter for a new line, language select, and the mic for Chrome speech recognition.
-  - A typing indicator.
-- **Case panel** (a side sheet below 1024 px) with four ARIA tabs:
-  - **Facts:** what the assistant has understood.
-  - **Next steps.**
-  - **Sources:** each knowledge-base provision with its verification level.
-  - **Notice:** a three-step flow, with the blanks still to fill highlighted and counted, "Copy notice", and "Download .txt".
-- **Citations:** `[ID]` citations in replies are buttons that open the Sources tab and highlight that source.
+## Nyaya Sahayak
 
-### Problem 3: Continuity Checker ([`web.py`](problem-3-continuity-checker/web.py), [`web/`](problem-3-continuity-checker/web/))
+Before, it was a single page with a chat column, a dense facts box, plain-text citations and the notice as inline text.
+Now it opens with three topic starters (refund, rent deposit and unpaid salary), which fill in a message with
+[brackets] to complete, so nothing is sent before the user edits it. The message box grows as you type; Enter sends and
+Shift+Enter starts a new line. Beside the chat, a case panel has four tabs: the facts it has understood, next steps,
+sources, and the draft notice. Citations in a reply are buttons that open the matching source. The notice tab
+highlights the blanks still to fill and can copy or download the notice.
 
-**Before:** the CLI wrote a static `report.html`, a long list of cards headed by rule codes (`NAME_DRIFT`, `SPEECH_RATE`…), with no filtering.
+## Continuity Checker
 
-**After:**
-- **Run checks view:** choose a show, then "Run checks". It takes about 0.2 s on 50 episodes and ends with a summary banner. "What gets checked" explains each rule in plain words.
-- **Findings view:**
-  - Summary numbers: errors, warnings, episodes affected, and cues checked.
-  - Filters: severity chips (All / Errors / Warnings), a check filter using friendly names with counts, an episode filter, and search.
-  - The table leads with plain language ("Name spelled differently"). The rule code stays as a quiet column on desktop.
-  - Export CSV is a real download of the triage spreadsheet the CLI writes.
-- **Detail side sheet:**
-  - The finding, a one-line explanation of the rule, and the suggested fix.
-  - Evidence: a spelling table with counts and episodes, the label table, the likely identity of an unnamed speaker, or the words-per-second calculation.
-  - Every location, each with "Show surrounding lines". This fetches the two cues before and after from `/api/context` and highlights the flagged line.
-  - "Copy locations".
-- **Endpoints:** `GET /api/shows`, `POST /api/check`, `GET /api/results`, `GET /api/context`, `GET /api/export`.
+Before, it was a long static list headed by rule codes such as NAME_DRIFT, with no filtering. Now you click *Run
+checks*, which takes about 0.2 seconds for 50 episodes, and get a summary of errors, warnings, episodes affected and
+cues checked. Findings can be filtered by severity, type of check and episode, or searched, and each one leads with
+plain language (“Name spelled differently”). The detail panel shows the suggested fix, the evidence (such as a table of
+spellings with counts), and each location with a *Show surrounding lines* button. *Export CSV* downloads the same
+triage spreadsheet as the command line.
 
 ## Before and after
 
-All images are in [`docs/screenshots/`](docs/screenshots/): 8 before, 34 after. They were captured with Playwright (headless Chromium).
+All screenshots are in [`docs/screenshots/`](docs/screenshots/) (8 before, 34 after) and use the invented demo show.
 
 | | Before | After |
 |---|---|---|
 | Promo Finder, list | ![](docs/screenshots/before/p1_review_demo_desktop.png) | ![](docs/screenshots/after/p1_promos_desktop.png) |
 | Promo Finder, detail | (no detail view) | ![](docs/screenshots/after/p1_detail_desktop.png) |
-| Promo Finder, mobile | ![](docs/screenshots/before/p1_review_demo_mobile.png) | ![](docs/screenshots/after/p1_promos_mobile.png) |
+| Promo Finder, phone | ![](docs/screenshots/before/p1_review_demo_mobile.png) | ![](docs/screenshots/after/p1_promos_mobile.png) |
 | Nyaya Sahayak | ![](docs/screenshots/before/p2_nyaya_result_desktop.png) | ![](docs/screenshots/after/p2_reply_desktop.png) |
 | Nyaya Sahayak, notice | (inline text) | ![](docs/screenshots/after/p2_notice_desktop.png) |
 | Continuity Checker, list | ![](docs/screenshots/before/p3_report_demo_desktop.png) | ![](docs/screenshots/after/p3_findings_desktop.png) |
 | Continuity Checker, detail | (no detail view) | ![](docs/screenshots/after/p3_detail_desktop.png) |
-| Continuity Checker, mobile | ![](docs/screenshots/before/p3_report_demo_mobile.png) | ![](docs/screenshots/after/p3_findings_mobile.png) |
+| Continuity Checker, phone | ![](docs/screenshots/before/p3_report_demo_mobile.png) | ![](docs/screenshots/after/p3_findings_mobile.png) |
 
-## Verification
+## How I checked it
 
-**Tests** (all pass):
+| Check | Result |
+|---|---|
+| Automated tests | Promo Finder 52 (including 4 new web tests), Nyaya Sahayak 18, Continuity Checker 19 (including 4 new web tests): all pass |
+| Screenshot checks | 28 of 28 screenshots pass at 1440, 1280, 768 and 390 pixels wide: no sideways scrolling, no control smaller than 24 pixels, no console errors |
+| Workflows by hand | Analyse, open a promo, step through, close with Escape (focus returns to the row); filters and search; the empty state; run checks, open a finding, show surrounding lines; CSV download; the phone navigation drawer |
+| Real data | Both new apps run on the full 50-episode pack and match the command line: 83 promos and 40 findings |
 
-| Project | Tests | New |
-|---|---|---|
-| Promo Finder | 52 | 4 web API tests: list shows, analyse runs the real pipeline and matches the files on disk, 404/400 errors and no path traversal, assets served |
-| Nyaya Sahayak | 18 | — |
-| Continuity Checker | 19 | 4 web API tests: check matches the rules, context returns ±2 cues, CSV export, 404/400 errors |
+Fixed along the way: a 3-pixel sideways scroll on phones, a misaligned message box, a button showing on desktop that
+belongs only on phones, a breadcrumb link under 24 pixels, two competing main buttons, a stale “Not analysed yet” hint,
+a grey shape on a disabled button, a squeezed filter on phones, redundant labels on phone cards, and English voice input
+being entered twice.
 
-**Screenshot checks.** The Playwright run checks each shot for horizontal overflow, controls smaller than 24 × 24 px, and console errors. The final run passed 28 of 28 shots across the desktop, laptop, tablet and mobile viewports. Defects found and fixed along the way:
-- 3 px overflow on mobile (Nyaya top bar).
-- Misaligned composer (inline textarea).
-- Case toggle visible on desktop.
-- Breadcrumb link under 24 px.
-- Two filled buttons competing after analysis.
-- Stale "Not analysed yet" hint.
-- Grey pill on the disabled text button.
-- Squeezed check filter on mobile.
-- Redundant "Clip" and "Severity" labels on mobile cards.
+## Limits
 
-**Workflows driven end to end:**
-- Analyse → list → open promo → Previous / Next → Escape closes, and focus returns to the row.
-- Search, episode filter and the "First 10 to post" chip.
-- Run checks → filter warnings → filter by check → open finding → show surrounding lines → Export CSV (download headers and content checked).
-- Search with no matches → empty state → "Clear filters".
-- The mobile drawer.
+There is only a light theme so far. Roboto loads from Google Fonts, so offline the system font is used. The shared
+style files are copied into each project to keep the projects independent, so a change has to be copied to all three.
+The optional language-model features are still command-line only. Promo Finder keeps the status of a running analysis
+in memory, so restarting the server mid-run loses that progress (finished results are kept). I haven't tested with a
+screen reader or with real users.
 
-**Real data.** Both new apps were run on the full 50-episode pack. Promo Finder gave 83 promos (46 of 50 episodes, 14,615 windows); Continuity Checker gave 40 findings with 15 errors. Both match the CLI. These screenshots are kept outside the repository.
+## Running it
 
-## How to run
-
-Each command runs from its project folder, and the app opens at the URL shown.
+Run each command from the project's folder, then open the address.
 
 ```bash
 cd problem-1-promo-finder && python3 web.py --shows "path/to/folder_of_shows"
 ```
-Promo Finder: http://localhost:8701. `--shows` accepts one show folder or a folder of show folders.
+Promo Finder: http://localhost:8701
 
 ```bash
 cd problem-2-nyaya-sahayak && python3 app.py web
 ```
-Nyaya Sahayak: http://localhost:8765.
+Nyaya Sahayak: http://localhost:8765
 
 ```bash
 cd problem-3-continuity-checker && python3 web.py --shows "path/to/folder_of_shows"
 ```
-Continuity Checker: http://localhost:8703.
+Continuity Checker: http://localhost:8703
 
-Try the two screenplay apps without the Kuku pack:
-
-```bash
-python3 samples/make_demo_show.py
-```
-```bash
-cd problem-1-promo-finder && python3 web.py --shows ../samples
-```
-
-The CLIs are unchanged: `python3 run.py --show …` still writes the same files, including the old static `review.html` / `report.html`.
-
-## Limitations
-
-**Theme and fonts:**
-- Light theme only; there is no dark mode yet. The tokens are structured so a dark scheme is one extra `:root` block.
-- Roboto comes from Google Fonts. Offline, the system font is used instead.
-
-**Shared files:**
-- The shared CSS and JS are copied into each `web/` folder, to keep the projects independent. Edit `design-system/` and re-copy (command in `DESIGN_SYSTEM.md`).
-
-**Feature gaps:**
-- The optional LLM reviewers (Promo Finder judge, Continuity model review) are CLI-only. The web apps run the offline engines.
-- Promo Finder's job status lives in server memory. Restarting the server during an analysis loses that run's progress, but finished results on disk are kept.
-- The demo show is short (about 40 s episodes), so Promo Finder finds only 4 promos there. The full pack gives 83.
-
-**Accessibility testing:**
-- Automated checks, contrast calculation and keyboard walk-throughs only.
-- Not yet tested with a screen reader or by real users.
+To try the two script tools without the Kuku pack, run `python3 samples/make_demo_show.py` from the repository root and
+pass `--shows ../samples`.
