@@ -70,7 +70,7 @@ def run_cases(a) -> int:
 
 
 PAGE = (HERE / "web" / "index.html")
-STATIC = {"/m3.css": ("m3.css", "text/css"), "/ui.js": ("ui.js", "text/javascript"),
+STATIC = {"/base.css": ("base.css", "text/css"), "/kit.js": ("kit.js", "text/javascript"),
           "/app.css": ("app.css", "text/css"), "/app.js": ("app.js", "text/javascript")}
 SESSIONS = {}
 

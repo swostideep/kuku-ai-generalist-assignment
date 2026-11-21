@@ -1,9 +1,8 @@
-# A shared web interface for the three tools
+# The three tools as websites
 
-After the main build I gave all three tools one consistent web interface, based on Google's Material Design 3 (details in [`DESIGN_SYSTEM.md`](DESIGN_SYSTEM.md)).
-Before this, Promo Finder and the Continuity Checker only produced static report pages, so each now has a small web
-app; Nyaya Sahayak's chat page was rebuilt. The engines, their outputs and every command-line tool are unchanged, and
-all the tests still pass.
+After the main build I turned the three tools into proper websites with one shared design system ([`DESIGN_SYSTEM.md`](DESIGN_SYSTEM.md)). Promo Finder and
+the Continuity Checker had only produced static report pages; Nyaya Sahayak was a single chat page. The engines, their
+outputs and every command-line tool are unchanged, and all the tests still pass.
 
 ## Ground rules I kept to
 
@@ -18,80 +17,82 @@ still runs on its own.
 The screenshots in the public repository use an invented eight-episode show, *The Lantern House*, so they contain no
 Kuku material. Screenshots of the real show were taken too, but kept off the public repository.
 
-## One design system
+## The design
 
-The three apps share one stylesheet and one small script. The colour scheme is built around a calm indigo, which reads
-as serious without looking like an alarm, and gives a second, clearly different colour for marking cliffhangers next
-to hooks. Text uses Roboto on a four-pixel spacing grid. All the main colour pairs meet the WCAG AA contrast standard:
-body text is 16.3 to 1, secondary text 8.9 to 1, and white on the main buttons 6.5 to 1. Errors and warnings always
-carry an icon and a word, never colour alone.
+The direction is monochrome and quiet: white paper, near-black ink, greys and plenty of space, set in a single
+typeface, Geist, which is light at large sizes and regular for reading. Colour appears only where it means
+something: red for errors, amber for warnings, and two soft highlights for the opening and closing lines of a promo.
+Buttons are black pills, sections have small left-aligned titles, and each home page shows its one important number
+on a white card sitting on a dotted grey panel. Dark mode follows the operating system.
 
-Each screen has one main action. Lists show only what is needed for a decision, and the detail opens in a side panel,
-with the raw evidence (scores, screenplay lines, surrounding cues) folded away inside it.
+Each site is now a real website with a header, a home page, a list, a page for every item and an explanation page.
+Every item has its own address, so the back button works and links can be shared. Contrast meets the WCAG AA
+standard throughout: body text is 18.9 to 1, secondary text at least 4.9 to 1, and input borders 3.3 to 1.
 
 ## Promo Finder
 
-Before, the only interface was a long static page of cards showing raw scores, with no search or filters. Now you
-choose a show and click *Analyse screenplay*: the real pipeline runs with a progress bar, then a banner offers the
-ranked list. The list has four summary numbers, a search box, an episode filter and a *First 10 to post* filter. Each
-promo is labelled Strong, Solid or Weaker, meaning the top, middle or bottom third of scores within that show. Opening
-a promo shows why it works, the hook and cliffhanger lines, the clip's details, the scores, and the screenplay excerpt
-with both lines highlighted. You can step to the previous or next promo and copy the timestamps for the edit.
+The home page leads with “Find the thirty seconds that sell a show.” Beside it, a card shows the number of promos ready
+to review, how many episodes they cover, the top three, and buttons to see them all or analyse again. While an
+analysis runs, the same card shows the episode count climbing with a progress bar. Below are four numbered cards on how
+it works, and a panel explaining why a strong ending can't rescue a weak opening, with the actual minimum scores.
+
+The Promos page lists every clip as a row: rank, opening line, episode and timing, closing line, and a Strong, Solid or
+Weaker label (the top, middle and bottom third within the show). It can be searched and filtered by episode or to the
+first ten to post. Each promo has its own page with why it works, the opening and closing lines, the scores, the clip
+details, the screenplay with both lines highlighted, previous and next buttons, and a button to copy the timestamps.
 
 ## Nyaya Sahayak
 
-Before, it was a single page with a chat column, a dense facts box, plain-text citations and the notice as inline text.
-Now it opens with three topic starters (refund, rent deposit and unpaid salary), which fill in a message with
-[brackets] to complete, so nothing is sent before the user edits it. The message box grows as you type; Enter sends and
-Shift+Enter starts a new line. Beside the chat, a case panel has four tabs: the facts it has understood, next steps,
-sources, and the draft notice. Citations in a reply are buttons that open the matching source. The notice tab
-highlights the blanks still to fill and can copy or download the notice.
+The home page leads with “Get back the money you're owed.” The card beside it lists the three problems it handles;
+choosing one opens the conversation with a starter message to complete. Numbered cards explain the four steps, and a
+panel sets out the principle that it never makes up the law, with the helpline numbers.
+
+The Ask page keeps the conversation and the case side by side: messages on the left, and on the right a panel with the
+facts it understood, the next steps, the sources and the draft notice. On phones the two become a Conversation / Your
+case switch. Citations in a reply open the matching source. The notice highlights the blanks still to fill and can be
+copied or downloaded. Voice input no longer repeats words.
 
 ## Continuity Checker
 
-Before, it was a long static list headed by rule codes such as NAME_DRIFT, with no filtering. Now you click *Run
-checks*, which takes about 0.2 seconds for 50 episodes, and get a summary of errors, warnings, episodes affected and
-cues checked. Findings can be filtered by severity, type of check and episode, or searched, and each one leads with
-plain language (“Name spelled differently”). The detail panel shows the suggested fix, the evidence (such as a table of
-spellings with counts), and each location with a *Show surrounding lines* button. *Export CSV* downloads the same
-triage spreadsheet as the command line.
+The home page leads with “Catch the mistakes before they're voiced.” Its card shows the number of errors to fix, the
+warnings, a red and amber bar for the balance between them, and the first three findings. The Findings page can be
+searched and filtered by severity, type of check and episode, and exports the CSV. Each finding has its own page with
+why it matters, the suggested fix, the evidence (such as every spelling with counts and episodes) and each location,
+where *Show surrounding lines* loads the cues before and after.
 
 ## Before and after
 
-All screenshots are in [`docs/screenshots/`](docs/screenshots/) (8 before, 34 after) and use the invented demo show.
+All screenshots are in [`docs/screenshots/`](docs/screenshots/) and use the invented demo show.
 
 | | Before | After |
 |---|---|---|
-| Promo Finder, list | ![](docs/screenshots/before/p1_review_demo_desktop.png) | ![](docs/screenshots/after/p1_promos_desktop.png) |
-| Promo Finder, detail | (no detail view) | ![](docs/screenshots/after/p1_detail_desktop.png) |
-| Promo Finder, phone | ![](docs/screenshots/before/p1_review_demo_mobile.png) | ![](docs/screenshots/after/p1_promos_mobile.png) |
-| Nyaya Sahayak | ![](docs/screenshots/before/p2_nyaya_result_desktop.png) | ![](docs/screenshots/after/p2_reply_desktop.png) |
-| Nyaya Sahayak, notice | (inline text) | ![](docs/screenshots/after/p2_notice_desktop.png) |
-| Continuity Checker, list | ![](docs/screenshots/before/p3_report_demo_desktop.png) | ![](docs/screenshots/after/p3_findings_desktop.png) |
-| Continuity Checker, detail | (no detail view) | ![](docs/screenshots/after/p3_detail_desktop.png) |
-| Continuity Checker, phone | ![](docs/screenshots/before/p3_report_demo_mobile.png) | ![](docs/screenshots/after/p3_findings_mobile.png) |
+| Promo Finder, home | ![](docs/screenshots/before/p1_review_demo_desktop.png) | ![](docs/screenshots/after/p1_home_desktop.png) |
+| Promo Finder, list | (one long static page) | ![](docs/screenshots/after/p1_list_desktop.png) |
+| Promo Finder, one promo | (no detail view) | ![](docs/screenshots/after/p1_detail_desktop.png) |
+| Promo Finder, phone | ![](docs/screenshots/before/p1_review_demo_mobile.png) | ![](docs/screenshots/after/p1_list_mobile.png) |
+| Nyaya Sahayak, home | ![](docs/screenshots/before/p2_nyaya_empty_desktop.png) | ![](docs/screenshots/after/p2_home_desktop.png) |
+| Nyaya Sahayak, conversation | ![](docs/screenshots/before/p2_nyaya_result_desktop.png) | ![](docs/screenshots/after/p2_reply_desktop.png) |
+| Nyaya Sahayak, notice on a phone | (inline text) | ![](docs/screenshots/after/p2_notice_mobile.png) |
+| Continuity Checker, home | ![](docs/screenshots/before/p3_report_demo_desktop.png) | ![](docs/screenshots/after/p3_home_desktop.png) |
+| Continuity Checker, findings | (one long static page) | ![](docs/screenshots/after/p3_list_desktop.png) |
+| Continuity Checker, one finding | (no detail view) | ![](docs/screenshots/after/p3_detail_desktop.png) |
+| Continuity Checker, phone | ![](docs/screenshots/before/p3_report_demo_mobile.png) | ![](docs/screenshots/after/p3_list_mobile.png) |
 
 ## How I checked it
 
 | Check | Result |
 |---|---|
-| Automated tests | Promo Finder 52 (including 4 new web tests), Nyaya Sahayak 18, Continuity Checker 19 (including 4 new web tests): all pass |
-| Screenshot checks | 28 of 28 screenshots pass at 1440, 1280, 768 and 390 pixels wide: no sideways scrolling, no control smaller than 24 pixels, no console errors |
-| Workflows by hand | Analyse, open a promo, step through, close with Escape (focus returns to the row); filters and search; the empty state; run checks, open a finding, show surrounding lines; CSV download; the phone navigation drawer |
-| Real data | Both new apps run on the full 50-episode pack and match the command line: 83 promos and 40 findings |
-
-Fixed along the way: a 3-pixel sideways scroll on phones, a misaligned message box, a button showing on desktop that
-belongs only on phones, a breadcrumb link under 24 pixels, two competing main buttons, a stale “Not analysed yet” hint,
-a grey shape on a disabled button, a squeezed filter on phones, redundant labels on phone cards, and English voice input
-being entered twice.
+| Automated tests | Promo Finder 52, Nyaya Sahayak 18, Continuity Checker 19: all pass |
+| Screenshot checks | 45 of 45 pass across desktop, laptop, tablet and phone: no sideways scrolling, no control smaller than 24 pixels, no console errors |
+| Workflows | Analyse and watch progress; filter, search and open items; previous and next; copy; export; the empty state; the phone menu; a full Nyaya conversation, notice copy and download; voice input with simulated speech events |
+| Real data | Both script tools run on the full 50-episode pack and match the command line: 83 promos and 40 findings |
 
 ## Limits
 
-There is only a light theme so far. Roboto loads from Google Fonts, so offline the system font is used. The shared
-style files are copied into each project to keep the projects independent, so a change has to be copied to all three.
-The optional language-model features are still command-line only. Promo Finder keeps the status of a running analysis
-in memory, so restarting the server mid-run loses that progress (finished results are kept). I haven't tested with a
-screen reader or with real users.
+Geist loads from Google Fonts, so offline the system font is used. The shared files are copied into each project to
+keep them independent, so a change has to be copied to all three. The optional language-model features are still
+command-line only. Promo Finder keeps a running analysis's status in memory, so restarting the server mid-run loses
+that progress (finished results are kept). I haven't tested with a screen reader or with real users.
 
 ## Running it
 

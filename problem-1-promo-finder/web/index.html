@@ -3,102 +3,42 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Promo Finder reads a microdrama script and ranks the 20 to 60 second clips most likely to make a stranger watch episode one.">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0e0e" media="(prefers-color-scheme: dark)">
 <title>Promo Finder</title>
-<link rel="stylesheet" href="/m3.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/base.css">
 <link rel="stylesheet" href="/app.css">
 </head>
 <body>
-<a class="sr-only skip" href="#main">Skip to content</a>
-<div class="app">
-  <header class="topbar">
-    <button class="icon-btn" data-nav-toggle aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar" id="navBtn"></button>
-    <span class="title-md">Promo Finder</span>
-  </header>
-  <div class="scrim" data-nav-scrim></div>
-
-  <nav class="sidebar" id="sidebar" aria-label="Main">
-    <div class="brand"><div class="brand-mark" id="brandIcon" aria-hidden="true"></div>
-      <div><div class="brand-name">Promo Finder</div><div class="brand-sub">Kuku AI workspace</div></div></div>
-    <a class="nav-item" href="#/" data-route="analyse"><span id="navIcon1"></span>Analyse</a>
-    <a class="nav-item" href="#/promos" data-route="promos" id="navPromos" aria-disabled="true"><span id="navIcon2"></span>Promos<span class="count" id="navCount"></span></a>
-    <div class="sidebar-foot body-sm muted">Ranks 20–60 s promo clips from timestamped screenplays. Scores rank clips within a show; an editor makes the final call.</div>
-  </nav>
-
-  <main class="main" id="main" tabindex="-1">
-    <!-- Analyse view -->
-    <section class="page" id="view-analyse" aria-labelledby="h-analyse">
-      <div class="page-header"><div>
-        <h1 class="headline" id="h-analyse">Find promo moments</h1>
-        <p class="desc body-lg muted">Choose a show. The tool reads every episode's screenplay, checks every 20–60 second window, and ranks the clips with the strongest opening hook and an unresolved ending.</p>
-      </div></div>
-
-      <div class="card analyse-card">
-        <div class="field">
-          <label for="showSelect">Show</label>
-          <select id="showSelect" class="select"></select>
-          <span class="hint" id="showHint">Loading shows…</span>
-        </div>
-        <div class="actions analyse-actions">
-          <button class="btn filled" id="analyseBtn" disabled></button>
-          <button class="btn outlined" id="viewBtn" hidden>View ranked promos</button>
-        </div>
-        <div id="statusArea" class="status-area" role="status" aria-live="polite"></div>
-      </div>
-
-      <details class="disclosure how">
-        <summary>How promos are chosen</summary>
-        <div class="content body-md muted stack">
-          <p><b>Cut points</b> never fall inside a spoken line, so every clip starts and ends cleanly.</p>
-          <p><b>Each window</b> is scored on its hook (first 3 seconds), cliffhanger (the last line before the cut), standalone clarity, tension and pacing.</p>
-          <p><b>A clip must pass</b> the hook, cliffhanger and clarity bars separately. A strong ending can't rescue a weak opening.</p>
-          <p><b>At most 2 promos per episode</b>, never overlapping. The first 10 come from 10 different episodes, including the opening ones.</p>
-        </div>
-      </details>
-    </section>
-
-    <!-- Promos view -->
-    <section class="page" id="view-promos" aria-labelledby="h-promos" hidden>
-      <nav class="crumbs body-md" aria-label="Breadcrumb"><a href="#/">Analyse</a><span aria-hidden="true">›</span><span id="crumbShow"></span></nav>
-      <div class="page-header"><div>
-        <h1 class="headline" id="h-promos">Ranked promos</h1>
-        <p class="desc body-lg muted" id="promoSummary"></p>
-      </div></div>
-      <div class="stats" id="stats"></div>
-
-      <div class="toolbar">
-        <div class="search grow"><span id="searchIcon"></span><label class="sr-only" for="q">Search promos</label>
-          <input class="input" id="q" type="search" placeholder="Search hook or cliffhanger text"></div>
-        <label class="sr-only" for="epFilter">Episode</label>
-        <select class="select ep-select" id="epFilter"><option value="">All episodes</option></select>
-        <button class="chip" id="waveChip" aria-pressed="false">First 10 to post</button>
-      </div>
-
-      <div class="table-wrap">
-        <table class="table" aria-describedby="resultCount">
-          <thead><tr><th scope="col">Rank</th><th scope="col">Episode · clip</th><th scope="col">Hook</th><th scope="col" class="hide-md">Cliffhanger</th><th scope="col">Strength</th></tr></thead>
-          <tbody id="rows"></tbody>
-        </table>
-      </div>
-      <p class="body-sm muted result-count" id="resultCount"></p>
-    </section>
-  </main>
-</div>
-
-<div class="scrim" id="sheetScrim"></div>
-<aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" aria-hidden="true" inert>
-  <div class="sheet-head">
-    <div class="grow"><h2 class="title-lg" id="sheetTitle"></h2><p class="body-md muted" id="sheetSub"></p></div>
-    <button class="icon-btn" id="sheetClose" aria-label="Close promo details" data-autofocus></button>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="ident" href="#/">
+      <span class="name">Promo Finder.</span>
+      <span class="meta" id="identMeta">Kuku AI workspace</span>
+    </a>
+    <button class="icon-btn menu-btn" type="button" data-icon="menu" aria-label="Menu" aria-expanded="false" aria-controls="nav"></button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#/" data-nav="home">Home</a>
+      <a href="#/promos" data-nav="promos">Promos</a>
+      <a href="#/method" data-nav="method">Method</a>
+    </nav>
   </div>
-  <div class="sheet-body" id="sheetBody"></div>
-  <div class="sheet-foot">
-    <button class="btn text" id="prevBtn">Previous</button>
-    <button class="btn text" id="nextBtn">Next</button>
-    <span class="grow"></span>
-    <button class="btn tonal" id="copyBtn"></button>
+</header>
+
+<main id="main" tabindex="-1"><div class="wrap" id="view"></div></main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="big" href="https://github.com/swostideep/kuku-ai-generalist-assignment" rel="noopener">github.com/swostideep/kuku-ai-generalist-assignment</a>
+    <div class="links"><a href="#/promos">Promos</a><a href="#/method">Method</a><a href="#/" id="footRun">Run an analysis</a></div>
+    <p class="fine">Built by Swostideep Nayak for the Kuku AI Generalist assignment. Scores rank clips within one show; an editor makes the final call.</p>
   </div>
-</aside>
-<script src="/ui.js"></script>
+</footer>
+<script src="/kit.js"></script>
 <script src="/app.js"></script>
 </body>
 </html>

@@ -3,83 +3,96 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Nyaya Sahayak helps people in India recover money they are owed: refunds, rent deposits and unpaid salary. Every legal point comes with its source.">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e0e0e" media="(prefers-color-scheme: dark)">
 <title>Nyaya Sahayak</title>
-<link rel="stylesheet" href="/m3.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/base.css">
 <link rel="stylesheet" href="/app.css">
 </head>
 <body>
-<a class="sr-only" href="#composer">Skip to message box</a>
-<div class="app no-sidebar">
-  <header class="topbar" role="banner">
-    <div class="brand">
-      <div class="brand-mark" aria-hidden="true" id="brandIcon"></div>
-      <div>
-        <div class="brand-name">Nyaya Sahayak</div>
-        <div class="brand-sub">Legal information for everyday money problems in India</div>
-      </div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="ident" href="#/">
+      <span class="name">Nyaya Sahayak.</span>
+      <span class="meta" id="identMeta">Legal help for money disputes</span>
+    </a>
+    <button class="icon-btn menu-btn" type="button" data-icon="menu" aria-label="Menu" aria-expanded="false" aria-controls="nav"></button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#/" data-nav="home">Home</a>
+      <a href="#/ask" data-nav="ask">Ask</a>
+      <a href="#/about" data-nav="about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <div class="wrap" id="view"></div>
+
+  <!-- The conversation lives here permanently so it survives moving between pages. -->
+  <div class="wrap" id="askView" hidden>
+    <div class="ask-switch segmented" role="group" aria-label="Show">
+      <button type="button" data-pane="convo" aria-pressed="true">Conversation</button>
+      <button type="button" data-pane="case" aria-pressed="false">Your case<span class="count" id="caseDot" aria-hidden="true"></span></button>
     </div>
-    <div class="spacer"></div>
-    <button class="btn tonal case-toggle" id="openCase" hidden aria-controls="casePanel"><span class="long">View case details</span><span class="short">Case</span></button>
-    <button class="btn text" id="newCase"><span class="long">Start a new case</span><span class="short">New case</span></button>
-  </header>
-
-  <main class="chat-layout" id="main">
-    <section class="conversation" aria-label="Conversation">
-      <div class="thread" id="thread" aria-live="polite">
-        <div class="welcome" id="welcome">
-          <h1 class="headline">What happened?</h1>
-          <p class="body-lg muted">Describe your problem in your own words. I'll organise the facts, explain your options with sources, and draft a legal notice you can send.</p>
-          <p class="title-sm topics-title">I can help with</p>
-          <div class="topics" role="list">
-            <button class="topic" role="listitem" data-start="I paid Rs [amount] to [company] on [date] for [product or service]. It was [defective / not delivered], and they have not refunded me.">
-              <span class="topic-title">Refund not received</span><span class="body-sm muted">Defective product, cancelled order, service not provided</span>
-            </button>
-            <button class="topic" role="listitem" data-start="My landlord in [city] has not returned my security deposit of Rs [amount]. I moved out on [date].">
-              <span class="topic-title">Deposit not returned</span><span class="body-sm muted">Landlord keeping your security deposit after you moved out</span>
-            </button>
-            <button class="topic" role="listitem" data-start="My employer [company name] in [city] has not paid my salary of Rs [amount] per month for [number] months.">
-              <span class="topic-title">Salary not paid</span><span class="body-sm muted">Unpaid wages, or final dues after resigning</span>
-            </button>
+    <div class="ask" id="ask">
+      <section class="convo" aria-label="Conversation">
+        <div class="thread" id="thread" aria-live="polite">
+          <div class="welcome" id="welcome">
+            <h1 class="h1">What happened?</h1>
+            <p class="lead">Tell me in your own words, in English, Hindi or Hinglish: who owes you money, how much, since when, and what proof you have.</p>
+            <ul class="rows starters" aria-label="Start with a common problem">
+              <li><button class="row" type="button" data-start="I paid Rs [amount] to [company] on [date] for [product or service]. It was [defective / not delivered], and they have not refunded me."><span class="lead-col">01</span><span><span class="title">A refund that never came</span><span class="meta">Faulty product, cancelled order, or a service not provided</span></span><span class="end" data-icon="arrowRight"></span></button></li>
+              <li><button class="row" type="button" data-start="My landlord in [city] has not returned my security deposit of Rs [amount]. I moved out on [date]."><span class="lead-col">02</span><span><span class="title">A deposit the landlord kept</span><span class="meta">Security deposit not returned after you moved out</span></span><span class="end" data-icon="arrowRight"></span></button></li>
+              <li><button class="row" type="button" data-start="My employer [company name] in [city] has not paid my salary of Rs [amount] per month for [number] months."><span class="lead-col">03</span><span><span class="title">Salary that wasn't paid</span><span class="meta">Unpaid wages, or final dues after resigning</span></span><span class="end" data-icon="arrowRight"></span></button></li>
+            </ul>
+            <p class="small muted disclaimer" id="disclaimerTop"></p>
           </div>
-          <div class="banner info welcome-note" id="disclaimerTop"></div>
         </div>
-      </div>
+        <form class="composer" id="composer" autocomplete="off">
+          <label class="sr-only" for="msg">Describe your problem</label>
+          <textarea id="msg" class="textarea" rows="2" placeholder="Describe what happened: when, how much, and what proof you have."></textarea>
+          <div class="composer-bar">
+            <label class="sr-only" for="lang">Voice input language</label>
+            <select id="lang" class="select"><option value="en-IN">English</option><option value="hi-IN">हिन्दी</option></select>
+            <button type="button" class="icon-btn" id="mic" data-icon="mic" aria-label="Speak instead of typing" aria-pressed="false"></button>
+            <span class="status small muted" id="composerStatus" role="status"></span>
+            <button type="submit" class="icon-btn send" id="send" data-icon="arrowUp" aria-label="Send"></button>
+          </div>
+        </form>
+        <p class="small muted composer-note">Enter sends, Shift + Enter starts a new line. <button class="text-btn" type="button" id="newCase">Start a new case</button></p>
+      </section>
 
-      <form class="composer" id="composer" autocomplete="off">
-        <label class="sr-only" for="msg">Describe your problem</label>
-        <textarea id="msg" class="textarea" rows="2" placeholder="Describe what happened: when, how much money, and what proof you have. English, Hindi or Hinglish."></textarea>
-        <div class="composer-bar">
-          <label class="sr-only" for="lang">Voice input language</label>
-          <select id="lang" class="select compact"><option value="en-IN">English</option><option value="hi-IN">हिन्दी</option></select>
-          <button type="button" class="icon-btn" id="mic" aria-label="Speak instead of typing" data-tip="Speak (uses your browser's speech recognition)"></button>
-          <span class="grow body-sm muted" id="composerStatus" role="status"></span>
-          <button type="submit" class="btn filled" id="send"><span>Send</span></button>
+      <aside class="case" id="casePanel" aria-labelledby="caseTitle">
+        <h2 class="title" id="caseTitle">Your case</h2>
+        <div class="tabs" role="tablist" aria-label="Case sections">
+          <button class="tab" role="tab" id="tab-case" aria-controls="pane-case" aria-selected="true">Facts</button>
+          <button class="tab" role="tab" id="tab-steps" aria-controls="pane-steps" aria-selected="false" tabindex="-1">Next steps</button>
+          <button class="tab" role="tab" id="tab-sources" aria-controls="pane-sources" aria-selected="false" tabindex="-1">Sources</button>
+          <button class="tab" role="tab" id="tab-notice" aria-controls="pane-notice" aria-selected="false" tabindex="-1">Notice</button>
         </div>
-      </form>
-    </section>
+        <div class="panes">
+          <div role="tabpanel" id="pane-case" aria-labelledby="tab-case" tabindex="0"></div>
+          <div role="tabpanel" id="pane-steps" aria-labelledby="tab-steps" tabindex="0" hidden></div>
+          <div role="tabpanel" id="pane-sources" aria-labelledby="tab-sources" tabindex="0" hidden></div>
+          <div role="tabpanel" id="pane-notice" aria-labelledby="tab-notice" tabindex="0" hidden></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
 
-    <div class="scrim" id="caseScrim"></div>
-    <aside class="case-panel" id="casePanel" aria-label="Your case" aria-hidden="false">
-      <div class="panel-head">
-        <h2 class="title-md">Your case</h2>
-        <button class="icon-btn panel-close" id="closeCase" aria-label="Close case details"></button>
-      </div>
-      <div class="tabs" role="tablist" aria-label="Case sections">
-        <button class="tab" role="tab" id="tab-case" aria-controls="pane-case" aria-selected="true">Facts</button>
-        <button class="tab" role="tab" id="tab-steps" aria-controls="pane-steps" aria-selected="false" tabindex="-1">Next steps</button>
-        <button class="tab" role="tab" id="tab-sources" aria-controls="pane-sources" aria-selected="false" tabindex="-1">Sources</button>
-        <button class="tab" role="tab" id="tab-notice" aria-controls="pane-notice" aria-selected="false" tabindex="-1">Notice</button>
-      </div>
-      <div class="panel-body">
-        <div role="tabpanel" id="pane-case" aria-labelledby="tab-case"></div>
-        <div role="tabpanel" id="pane-steps" aria-labelledby="tab-steps" hidden></div>
-        <div role="tabpanel" id="pane-sources" aria-labelledby="tab-sources" hidden></div>
-        <div role="tabpanel" id="pane-notice" aria-labelledby="tab-notice" hidden></div>
-      </div>
-    </aside>
-  </main>
-</div>
-<script src="/ui.js"></script>
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="big" href="https://github.com/swostideep/kuku-ai-generalist-assignment" rel="noopener">github.com/swostideep/kuku-ai-generalist-assignment</a>
+    <div class="links"><a href="#/ask">Ask</a><a href="#/about">About</a><a href="tel:15100">Free legal aid: 15100</a><a href="tel:112">Emergency: 112</a></div>
+    <p class="fine">Built by Swostideep Nayak for the Kuku AI Generalist assignment. General legal information, not legal advice. Not reviewed by a lawyer.</p>
+  </div>
+</footer>
+<script src="/kit.js"></script>
 <script src="/app.js"></script>
 </body>
 </html>

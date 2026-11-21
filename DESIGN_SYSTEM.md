@@ -1,142 +1,133 @@
-# Kuku AI Workspace design system
+# Plain: the design system behind the three sites
 
-One Material Design 3 system shared by the three web apps: Promo Finder, Nyaya Sahayak and Continuity Checker. It is plain CSS and JavaScript, with no framework, build step or npm.
+Promo Finder, Nyaya Sahayak and the Continuity Checker share one small design system. It is plain CSS and JavaScript,
+with no framework and no build step.
 
 | File | What it is |
 |---|---|
-| [`design-system/m3.css`](design-system/m3.css) | Tokens and every shared component (about 330 lines) |
-| [`design-system/ui.js`](design-system/ui.js) | Small helpers: icons, side sheet, focus trap, nav drawer, snackbar, copy, download, JSON fetch |
+| [`design-system/base.css`](design-system/base.css) | Tokens, layout, and every shared component |
+| [`design-system/kit.js`](design-system/kit.js) | Stroke icons and line drawings, a hash router, the header menu, toast, copy and download, a JSON fetch helper |
 
-`design-system/` is the source of truth. Each app keeps a copy in its own `web/` folder, so each project still runs on its own. After changing the source, re-copy it:
+`design-system/` is the source. Each app keeps a copy in its own `web/` folder so each project still runs on its own;
+after changing the source, copy it across:
 
 ```bash
-for d in problem-1-promo-finder problem-2-nyaya-sahayak problem-3-continuity-checker; do cp design-system/m3.css design-system/ui.js $d/web/; done
+for d in problem-1-promo-finder problem-2-nyaya-sahayak problem-3-continuity-checker; do cp design-system/base.css design-system/kit.js $d/web/; done
 ```
 
-## Principles
+## Direction
 
-1. **One primary action per screen.** It is a filled button: "Analyse screenplay", "Run checks" or "Send". Once results exist, "View results" becomes the filled button and running again drops to an outlined button.
-2. **Progressive disclosure.**
-   - Lists show the decision-making fields only.
-   - Detail lives in a side sheet, and the raw evidence (scores, screenplay lines, surrounding cues) sits behind a collapsed disclosure inside it.
-   - Method explanations ("How promos are chosen") are collapsed by default.
-3. **Plain language first, codes second.**
-   - Findings lead with "Name spelled differently"; the rule code `NAME_DRIFT` is a quiet monospace column on desktop only.
-   - Promo strength is shown as Strong / Solid / Weaker: the top, middle and bottom third of scores within the show. Raw scores are one click away.
-4. **Nothing decorative that could be mistaken for data.** There are no charts, gradients or invented metrics. Every number on screen comes from the backend's output.
-5. **Status is never colour alone.** Errors and warnings carry an icon and a word, and the first-wave promos carry a "First 10" label.
+The look is monochrome and quiet, like a well-made portfolio or a good money app: white paper, near-black ink, greys,
+and a lot of space. Two references shaped it. One showed light, large type, small left-aligned section titles,
+numbered cards with line drawings, and a dotted grey "stage" holding a white card. The other showed pill buttons and a
+hero card built around one big live number.
+
+Rules I held to:
+
+1. **Colour only where it means something.** Errors are red, warnings amber, and the opening and closing lines of a
+   promo get two soft highlights. Everything else is black, white and grey, so colour always carries information.
+2. **One big number per home page.** Each site opens with the figure that matters: promos ready to review, or errors
+   to fix. The rest of the page explains it.
+3. **Real pages, real addresses.** Every list item has its own URL (`#/promos/12`, `#/findings/3`), so the back button
+   works and a link can be shared.
+4. **Plain words first.** “Name spelled differently” leads, and the rule code `NAME_DRIFT` appears only on the Checks
+   page.
+5. **Nothing invented.** Every number comes from the tool's own output.
 
 ## Tokens
 
-### Colour (M3 light scheme, seed indigo `#4355B9`)
+### Colour
 
-| Role | Value | Used for |
-|---|---|---|
-| `--md-primary` / `--md-on-primary` | `#4355B9` / `#FFFFFF` | Filled buttons, links, active progress, focus ring |
-| `--md-primary-container` | `#DEE0FF` | User chat bubbles, hook highlight, progress track |
-| `--md-secondary-container` | `#E0E1F9` | Active nav item, selected chip, "info" status, suggested fix |
-| `--md-tertiary` / `-container` | `#77536D` / `#FFD7F1` | Cliffhanger highlight (distinct from the hook) |
-| `--md-error-container` / `on-` | `#FFDAD6` / `#410002` | Error status, error banner |
-| `--md-warning-container` / `on-` | `#FFDF9E` / `#261A00` | Warning status (extension: M3 has no warning role) |
-| `--md-success-container` / `on-` | `#C9EFD3` / `#00210D` | Success banner, "Strong" (extension) |
-| `--md-surface` … `-container-highest` | `#FBF8FF` → `#E4E1E9` | Page, cards, sidebar, stats, input fills |
-| `--md-on-surface` / `-variant` | `#1B1B21` / `#46464F` | Body text / secondary text |
-| `--md-outline` / `-variant` | `#767680` / `#C6C5D0` | Field borders / dividers |
+| Token | Light | Dark | Used for |
+|---|---|---|---|
+| `--bg` | `#ffffff` | `#0e0e0e` | Page and cards |
+| `--soft` | `#f3f4f6` | `#1a1a1a` | Segmented controls, tags, notes |
+| `--stage` | `#ebebe9` | `#161616` | Showcase panels (with a dot grid) |
+| `--line` | `#ececec` | `#232323` | Card borders and dividers |
+| `--control` | `#8a8f96` | `#6a6e75` | Borders of inputs and outlined buttons |
+| `--ink` | `#111111` | `#f2f2f2` | Text, primary buttons |
+| `--ink-2` | `#5f6570` | `#a3a7ae` | Secondary text |
+| `--ink-3` | `#8a8f98` | `#80858d` | Large display text only (the grey half of a headline) |
+| `--red` / `--red-soft` | `#b3261e` / `#fbeceb` | `#f1958d` / `#2c1615` | Errors |
+| `--amber` / `--amber-soft` | `#8a5a00` / `#fbf1df` | `#e5b35f` / `#2a2213` | Warnings, blanks in a notice |
+| `--green` / `--green-soft` | `#1f6f4a` / `#e8f2ec` | `#7fcfa4` / `#142319` | Proof the user has, official sources |
+| `--mark-hook` / `--mark-cliff` | `#e7efe9` / `#f6ecd9` | `#18271e` / `#2a2214` | Opening and closing lines in a script |
 
-**Why indigo:**
-- All three tools are about trust: a legal assistant, QA and editorial ranking.
-- A calm, desaturated indigo reads as serious without the "alert" connotation of red or the "marketing" feel of saturated purple.
-- Hook and cliffhanger need two clearly different highlight colours, which the indigo/mauve primary/tertiary pair gives.
+Dark mode follows the operating system.
 
 **Contrast** (WCAG 2.2, computed from the token values):
 
 | Pair | Ratio | Requirement |
 |---|---|---|
-| Body text on background | 16.3:1 | 4.5:1 |
-| Secondary text on background | 8.9:1 | 4.5:1 |
-| Secondary text on high container | 7.6:1 | 4.5:1 |
-| Primary links / text buttons on background | 6.2:1 | 4.5:1 |
-| White on primary (filled buttons) | 6.5:1 | 4.5:1 |
-| Status badges (error / warning / success / info) | 13.3–13.7:1 | 4.5:1 |
-| Field outline on background | 4.3:1 | 3:1 (non-text) |
+| Body text on white | 18.9:1 | 4.5:1 |
+| Secondary text on white / on fills / on the stage | 5.9 / 5.3 / 4.9:1 | 4.5:1 |
+| Grey half of headlines (64 px) | 3.3:1 | 3:1 for large text |
+| Error, warning and success badges | 5.3 to 5.7:1 | 4.5:1 |
+| Input and button borders | 3.3:1 | 3:1 for controls |
 
-### Typography (Roboto, Roboto Mono)
+### Type
 
-| Class | Size / line | Use |
+One typeface: **Geist**, loaded from Google Fonts (the system sans-serif is used offline). Large sizes are set light,
+which gives the calm, editorial feel; small text stays at regular weight so it remains easy to read.
+
+| Class | Size and weight | Use |
 |---|---|---|
-| `.headline` | 28/36, 400 | Page title (one per view) |
-| `.title-lg` | 22/28, 400 | Side-sheet title |
-| `.title-md` | 16/24, 500 | Top-bar title, empty-state title |
-| `.title-sm` | 14/20, 500 | Section labels, row titles |
-| `.body-lg` | 16/24 | Page description, lead paragraph |
-| `.body-md` | 14/20 | Default text |
-| `.body-sm` | 12/16 | Hints, footnotes |
-| `.label-lg` / `.label-md` | 14/20, 12/16, 500 | Buttons, chips, field labels |
-| `.mono` | 13 px Roboto Mono | Timestamps, cue IDs, rule codes |
+| `.display` | 64 px, 300 | Home page headline (38 px on phones) |
+| `.h1` | 48 px, 300 | Page titles |
+| `.h2` | 28 px, 400 | Showcase headlines |
+| `.title` | 24 px, 500 | Section titles, left aligned |
+| `.h3` | 20 px, 400 | Card titles, quotes |
+| `.lead` | 20 px, 300 | Introductions |
+| body | 15 px, 400 | Everything else |
+| `.kicker` | 13 px, spaced capitals | Small labels such as SCORES |
+| `.figure` | 72 px, 300, tabular | The big number |
 
-Fonts load from Google Fonts. Offline, the stack falls back to the system UI font, and the layout does not depend on the font metrics.
+### Space and shape
 
-### Spacing, shape, elevation, motion
-
-- **Spacing:** a 4 px grid, `--s1` 4 · `--s2` 8 · `--s3` 12 · `--s4` 16 · `--s5` 20 · `--s6` 24 · `--s8` 32 · `--s10` 40 · `--s12` 48.
-- **Shape:**
-  - `--r-xs` 4: fields.
-  - `--r-sm` 8: chips and status badges.
-  - `--r-md` 12: cards, quotes and banners.
-  - `--r-lg` 16: side sheet and stats.
-  - `--r-full`: buttons, nav items and search.
-- **Elevation:** only for surfaces that float above the page: the side sheet, nav drawer and snackbar (`--e3`). Cards are flat with an outline, which keeps the page quiet.
-- **Motion:** 200 ms, `cubic-bezier(.2,0,0,1)` (M3 "standard"). `prefers-reduced-motion` turns off all transitions and animations.
+- **Spacing:** a 4-pixel scale (4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96, 128). Sections are 96 px apart.
+- **Page width:** 1,328 px, with 56 px side margins on desktop, 24 px on tablets and 16 px on phones.
+- **Radii:** 12–14 px for fields and cards, 20 px for stages. Buttons, search fields and segmented controls are pills.
+- **Elevation:** one soft shadow, used only for the white card on a stage and for menus. Everything else is flat, with
+  hairline borders.
+- **Motion:** 160 ms with a gentle ease, and a short rise as the hero appears. All of it switches off when the
+  visitor asks for reduced motion.
 
 ## Components
 
 | Component | Class | Notes |
 |---|---|---|
-| App shell | `.app`, `.sidebar`, `.main`, `.page` | 232 px navigation sidebar on desktop. Below 840 px it becomes a modal drawer behind a top app bar (`.topbar`), with a scrim. Escape closes it |
-| Nav item | `.nav-item` | `aria-current="page"` marks the active view. `aria-disabled` is set until results exist. `.count` shows the result count |
-| Buttons | `.btn.filled / .tonal / .outlined / .text`, `.icon-btn` | 40 px tall. Icon buttons are 48 × 48. Disabled states lower contrast but keep the label |
-| Text field / select / textarea | `.field`, `.input`, `.select`, `.textarea` | Visible `<label>`, hint text below, 2 px primary outline on focus |
-| Search | `.search` | Pill field with a leading icon and a screen-reader label |
-| Filter chip | `.chip[aria-pressed]` | Toggle state is exposed to assistive tech |
-| Card | `.card` | Outlined, flat |
-| Stats row | `.stats` > `.stat` | Up to 4 summary numbers. Wraps 2 × 2 on mobile |
-| Table | `.table-wrap` > `.table` | Rows are focusable and open with Enter or Space. Below 760 px each row becomes a stacked card, using `td[data-label]` for the label |
-| Status badge | `.status.error / warning / success / info / neutral` | Always icon or text plus colour |
-| Banner | `.banner.error / warning / success / info` | Inline alert with an icon. Lives inside a `role="status"` live region |
-| Progress | `.progress`, `.progress.determinate` | Indeterminate bar, or determinate with `role="progressbar"` and `aria-valuenow` |
-| Empty state | `.empty` | Icon, title, one sentence, and one action (for example "Clear filters") |
-| Side sheet | `.sheet` + `.scrim` | `role="dialog"`, `aria-modal`, focus moves in and is trapped. Escape or the scrim closes it and returns focus to the row that opened it. Full-screen on phones |
-| Disclosure | `details.disclosure` | Native `<details>`, keyboard-operable without script |
-| Transcript | `.transcript` > `.line` | Time, speaker, text. `.mark-hook` / `.mark-cliff` highlight lines and a legend explains the colours |
-| Tabs | `.tabs` > `.tab[aria-selected]` | ARIA tabs with arrow-key navigation (Nyaya case panel) |
-| Snackbar | `.snackbar` | Short confirmation ("Timestamps copied"), announced politely |
-| Key–value list | `.kv` | Clip metadata, rate evidence |
+| Header | `.site-header`, `.ident`, `.nav` | Name with a live date, time and context line on the left; text links on the right, with a thin underline for the current page. On phones, a menu button opens a small panel. |
+| Hero | `.hero` | Headline with a grey second half, a lead, one primary button and one text link; the live card on the right. |
+| Stage and live card | `.stage`, `.live` | Dotted grey panel with a white card: the big number, a one-line explanation, a thin meter, a short list and the actions. |
+| Numbered cards | `.cards`, `.card` | 001, a line drawing, a title, one bold line and a short grey description. |
+| Showcase | `.showcase` | A principle on the left, a white card of facts (`.spec`) on the right. |
+| Buttons | `.btn.primary / .secondary / .ghost`, `.icon-btn`, `.text-link` | Black pill for the main action; outlined pill for the second; underlined text link for a third. |
+| Fields | `.field`, `.input`, `.select`, `.textarea`, `.search` | Visible labels, a 3:1 border, and a black border with a soft ring on focus. |
+| Segmented control | `.segmented` | Few-option filters such as All, Errors, Warnings, with counts. |
+| Stats | `.stats` | Four figures divided by hairlines; two by two on phones. |
+| Rows | `.rows`, `.row` | The main list: a large number, a title, grey details and a badge. The whole row is a link. |
+| Badges and tags | `.badge`, `.tag` | Dot plus word; never colour alone. |
+| Notes | `.note` | Soft fill with an icon, for warnings, errors and tips. |
+| Quotes and transcript | `.quote`, `.transcript`, `.line` | Script lines with time, speaker and highlight. |
+| Tabs | `.tabs`, `.tab` | Pill tabs with arrow-key navigation (Nyaya's case panel). |
+| Toast | `.toast` | Short confirmations such as “Timestamps copied”. |
+| Footer | `.site-footer` | A large underlined link, small links, and one line of fine print. |
 
-## Accessibility checklist (WCAG 2.2 AA)
+## Accessibility (WCAG 2.2 AA)
 
-**Built into every app:**
-- A skip link.
-- Landmarks: `nav`, `main`, and `role="dialog"` for the sheet.
-- One `h1` per view.
-- Labels on every control.
-- A visible 2 px focus ring.
-- Live regions for progress and results.
+- A skip link, landmarks, one `h1` per page, and visible labels on every control.
+- Moving between pages puts focus on the new heading and updates the page title.
+- A visible 2 px focus outline everywhere.
+- Every control is at least 24 × 24 px; most are 36–46 px. This is checked automatically at four screen sizes.
+- No sideways scrolling at 390 px wide, also checked automatically.
+- Status is always a word plus colour. Reduced motion is respected.
+- Not done: testing with a real screen reader.
 
-**Target size (2.5.8):** every control is at least 24 × 24 px. This is checked automatically at four viewports by `tools/shots.py`, a Playwright script that sits outside this repository. Most targets are 40–48 px.
-
-**Reflow (1.4.10):** no horizontal page scroll at 390 px wide, also checked automatically.
-
-**Focus:**
-- Not obscured (2.4.11): the sheet traps focus and returns it to the row that opened it.
-- Order (2.4.3) follows the visual order.
-
-**Not done:** testing with a real screen reader (VoiceOver or NVDA).
-
-## Viewports
+## Screen sizes
 
 | Name | Size | Layout |
 |---|---|---|
-| Desktop | 1440 × 900 | Sidebar + content (max 1120 px); 560 px side sheet |
-| Laptop | 1280 × 800 | Same; secondary table column hidden below 1100 px |
-| Tablet | 768 × 1024 | Top app bar + drawer; table stays a table; sheet over content |
-| Mobile | 390 × 844 | Drawer; table rows become cards; filters stack; sheet is full-screen |
+| Desktop | 1440 × 900 | Two-column hero, four cards in a row, chat beside the case panel |
+| Laptop | 1280 × 800 | Same |
+| Tablet | 768 × 1024 | Hero stacks, two cards per row, filters wrap, the case panel moves behind a switch |
+| Phone | 390 × 844 | Menu button, one card per row, list rows stack, full-width filters |

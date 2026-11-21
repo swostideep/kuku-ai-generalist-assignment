@@ -39,7 +39,7 @@ cd problem-3-continuity-checker && python3 run.py --show "path/to/show_folder" &
 
 ### Web apps
 
-All three apps share one Material Design 3 interface ([`DESIGN_SYSTEM.md`](DESIGN_SYSTEM.md); before/after in [`FRONTEND_REDESIGN_REPORT.md`](FRONTEND_REDESIGN_REPORT.md)).
+All three apps are small websites built on one shared design system ([`DESIGN_SYSTEM.md`](DESIGN_SYSTEM.md); before/after in [`FRONTEND_REDESIGN_REPORT.md`](FRONTEND_REDESIGN_REPORT.md)).
 
 | App | Command (from its folder) | URL |
 |---|---|---|

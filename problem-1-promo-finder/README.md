@@ -121,7 +121,7 @@ episode .txt ──► parser.py ──► candidates.py ───────�
 
 ```
 run.py              CLI
-web.py              web app server (stdlib); UI in web/ (Material 3, see ../DESIGN_SYSTEM.md)
+web.py              web app server (stdlib); site in web/ (see ../DESIGN_SYSTEM.md)
 evaluate.py         reference-free quality checks (v1 vs v2), recomputed from the screenplay
 reproduce.sh        regenerate outputs + logs
 promo_finder/       parser, signals, candidates, select, judge, report, pipeline

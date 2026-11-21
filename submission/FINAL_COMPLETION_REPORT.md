@@ -8,7 +8,7 @@
 | Problem 2: Nyaya Sahayak | 18/18 pass, including all 28 scripted conversations | Transcripts in `problem-2-nyaya-sahayak/outputs/transcripts/` (invented test cases). The web app was tested live: one rent-deposit message gave the correct amount, state, evidence, citations and draft notice |
 | Problem 3: Continuity Checker | 19/19 pass (incl. 4 web API) | 40 findings (15 errors, 25 warnings) in about 0.15 s; planted-error evaluation 100/100 on seeds 7 and 11 (circular, as disclosed); real recall 7 of 10 confirmed spelling variants |
 
-**Frontend (added after the main build):** all three apps now have a working Material 3 web interface on one shared design system. The engines and CLI outputs are unchanged. See [`../FRONTEND_REDESIGN_REPORT.md`](../FRONTEND_REDESIGN_REPORT.md) and [`../DESIGN_SYSTEM.md`](../DESIGN_SYSTEM.md).
+**Frontend (added after the main build):** all three apps are now small websites on one shared, minimal design system. The engines and CLI outputs are unchanged. See [`../FRONTEND_REDESIGN_REPORT.md`](../FRONTEND_REDESIGN_REPORT.md) and [`../DESIGN_SYSTEM.md`](../DESIGN_SYSTEM.md).
 
 ## Fixed after the internal audit (v2.1)
 

@@ -29,7 +29,7 @@ from continuity.report import write_all
 HERE = Path(__file__).resolve().parent
 WEB = HERE / "web"
 STATIC = {"/": ("index.html", "text/html"), "/index.html": ("index.html", "text/html"),
-          "/m3.css": ("m3.css", "text/css"), "/ui.js": ("ui.js", "text/javascript"),
+          "/base.css": ("base.css", "text/css"), "/kit.js": ("kit.js", "text/javascript"),
           "/app.css": ("app.css", "text/css"), "/app.js": ("app.js", "text/javascript")}
 
 

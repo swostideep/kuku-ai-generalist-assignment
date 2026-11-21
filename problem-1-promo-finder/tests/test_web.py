@@ -84,7 +84,7 @@ class WebApi(unittest.TestCase):
 
     def test_W04_serves_the_page(self):
         """W04 the page and its assets are served"""
-        for p in ("/", "/m3.css", "/ui.js", "/app.css", "/app.js"):
+        for p in ("/", "/base.css", "/kit.js", "/app.css", "/app.js"):
             self.assertEqual(self.get(p)[0], 200, p)
 
 
