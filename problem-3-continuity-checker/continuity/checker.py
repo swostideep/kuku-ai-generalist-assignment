@@ -38,7 +38,7 @@ COMMON_CAPS = {"The", "This", "That", "Then", "There", "They", "What", "When", "
                "Before", "After", "Until", "While", "Even", "Only", "Just", "Still", "Never", "Always", "Here",
                "Something", "Someone", "Nothing", "Everyone", "Gothic", "Profile", "Side", "Angle",
                "Shot", "Insert", "Tracking", "Panning", "Overhead", "Reverse", "Two", "Three", "Point", "View"}
-# Capitalised words that are descriptions, not names ("Blond Nobleman", "Noble Matriarch")
+# Capitalised words that are descriptions, not names ("Tall Stranger", "Old Servant")
 DESCRIPTIVE = {w.title() for w in GENERIC_LABEL_WORDS} | {"Noble", "Gown", "Gold", "Cap", "Royal", "Crown", "High",
                "Former", "Dowager", "Matriarch", "Nobleman", "Noblewoman"}
 CONT_REF = re.compile(r"(?:picks up|follows|continues|continuing)(?:\s+(?:directly|immediately|straight))?"
